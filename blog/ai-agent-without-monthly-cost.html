@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>How to ship an AI agent with zero monthly infra cost</title>
+<meta name=description content="Run a production AI agent for $0/month. Use Cloudflare Workers, a serverless function, and on-demand model calls so you pay only per request, not for idle uptime.">
+<link rel=stylesheet href="../assets/css/style.css">
+</head>
+<body>
+<div class=wrap>
+<div class=article>
+<h1>How to ship an AI agent with zero monthly infra cost</h1>
+<div class=meta>2026 · 07 · Strata</div>
+<p>Most AI agents sit idle 99% of the time. Yet teams pay for a VM that runs 24/7 to handle the 1%. You can avoid that bill entirely by moving to a request-driven architecture.</p>
+
+<h2>The core idea: pay per call, not per hour</h2>
+<p>An agent is just a function: take input, call a model, return output. There is no reason that function needs a server waiting around.</p>
+<p>Put the logic in a serverless function. It spins up when a request arrives and shuts down after. If no one calls it today, you pay nothing today.</p>
+<p>Cloudflare Workers and Deno Deploy both offer a generous free tier that covers most early-stage agents. You get a URL, HTTPS, and a global edge network at no cost.</p>
+
+<h2>Where the model call goes</h2>
+<p>The model is the only thing you truly pay for, and it is metered by token. Use a provider with per-token billing and no minimum commitment.</p>
+<p>Keep the system prompt short. Every token in the prompt is billed on every call. A 2,000-token system prompt at 10,000 calls/month is 20M wasted tokens.</p>
+<p>Cache what you can. Cloudflare Workers KV is free up to a quota and lets you store a user's session context without a database. Read it on each call, write it back when it changes.</p>
+<p>If you need a vector store for memory, use a free-tier managed option or a static file in R2. Don't stand up Postgres just to hold a few thousand vectors.</p>
+
+<h2>Wiring it without a backend</h2>
+<p>Your agent needs an entry point. A form on a static page posts to the worker URL. The worker calls the model and streams the answer back.</p>
+<p>No API gateway. No container orchestration. No load balancer. The platform handles all of that.</p>
+<p>For scheduled tasks, use a cron trigger built into the platform. Cloudflare Cron Triggers fire your worker on a schedule, still free within limits. This replaces a cron VM.</p>
+<p>For longer jobs that exceed the function timeout, break the work into a queue. Cloudflare Queues has a free tier. The worker enqueues chunks and a second worker drains them.</p>
+
+<h2>State without a database server</h2>
+<p>People reach for a database too early. Most agents need three things: a key-value for sessions, a blob for files, and a log for history.</p>
+<p>KV covers sessions. R2 covers blobs. A simple append-only log in R2 or KV covers history. None of these require a running process you pay to keep alive.</p>
+<p>When you outgrow free tiers, you still pay per use. The cost scales with usage, not with wall-clock time. That is the property you want.</p>
+
+<h2>When this stops being free</h2>
+<p>Free tiers have ceilings. A worker on Cloudflare's free plan handles 100,000 requests per day. That is enough for most agents until they earn money.</p>
+<p>Token costs grow with users. A single heavy user can outspend the platform savings. Set a per-user daily token cap in the worker before you ship.</p>
+<p>If you need a private model or fine-tune, the per-token bill becomes the real cost. At that point, the infra was never the expensive part.</p>
+
+<h2>The launch checklist</h2>
+<p>Deploy the worker. Point a custom domain at it. Add a system prompt under 500 tokens. Wire one static form. Set a token cap. Ship.</p>
+<p>You now run an agent that costs $0 on quiet days and a few cents on busy ones. Compare that to a $20/month VM you forgot to turn off.</p>
+
+<h2>Handling secrets without a config server</h2>
+<p>Your model API key must not live in client code. Store it as an encrypted environment variable on the platform. The worker reads it at runtime; the browser never sees it.</p>
+<p>Rotate the key from the provider dashboard, not by redeploying. Most platforms pick up the new secret on the next request. No downtime, no code change.</p>
+<p>If you call more than one API, prefix variables by service. <code>MODEL_KEY</code> and <code>SEARCH_KEY</code> stay separate so a leak in one path does not expose the other.</p>
+
+<h2>Observability on the cheap</h2>
+<p>You cannot tune what you cannot see. Log each request's token count and latency to a free analytics sink or a simple KV counter.</p>
+<p>Watch the tail. A few users sending huge inputs can blow the budget while the median stays tiny. The counter catches them before the invoice does.</p>
+<p>Add a hard ceiling in code: if a request would exceed your daily token budget, return a polite "try later" instead of calling the model. The platform keeps running; you just stop spending.</p>
+
+<h2>Migrating off the free tier</h2>
+<p>The day you exceed free limits, switch to the platform's paid tier with the same code. No rewrite, just a billing toggle.</p>
+<p>Set a hard monthly cap in the billing console before that day arrives. A misconfigured loop can otherwise spend real money in an hour.</p>
+<p>Keep the architecture serverless. Even on paid tiers, per-request pricing stays cheaper than an always-on box for spiky agent traffic.</p>
+<p>If you want a working starting point, our <a href="/tools/" class=inline>free tools</a> include a ready worker template. Need a tuned system prompt? Our <a href="/prompts/" class=inline>prompt packs</a> cover common agent roles.</p>
+
+<hr class=divider>
+<p class=muted>Related: <a href="/blog/whatsapp-bot-blueprint.html" class=inline>The WhatsApp AI bot blueprint (that doesn't get you banned)</a> · <a href="/blog/rag-without-hallucinations.html" class=inline>RAG without the hallucinations: chunking that actually works</a></p>
+</div>
+</div>
+</body>
+</html>

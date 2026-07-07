@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>RAG without the hallucinations: chunking that actually works</title>
+<meta name=description content="Hallucinations in RAG come from bad chunks, not bad models. Use overlapping fixed-size chunks, metadata filtering, and cite-only answers to ground the model in real text.">
+<link rel=stylesheet href="../assets/css/style.css">
+</head>
+<body>
+<div class=wrap>
+<div class=article>
+<h1>RAG without the hallucinations: chunking that actually works</h1>
+<div class=meta>2026 · 07 · Strata</div>
+<p>RAG does not hallucinate because the model is weak. It hallucinates because the chunk it was given did not contain the answer, so the model filled the gap. Fix the chunk and the hallucination often disappears.</p>
+
+<h2>Why naive chunking fails</h2>
+<p>The default split-by-token approach cuts documents at arbitrary points. A sentence that starts in chunk 3 and ends in chunk 4 gets split. The retriever returns half a fact.</p>
+<p>The model receives a fragment and is asked a question the fragment cannot answer. It guesses. That guess is your hallucination.</p>
+<p>Long chunks are just as bad. A 2,000-token chunk that mixes five topics dilutes the signal. The retriever scores it on the wrong topic and the model drowns in noise.</p>
+
+<h2>Fixed-size with overlap</h2>
+<p>Use a fixed token window, roughly 300 to 500 tokens. Add a 50 to 100 token overlap between consecutive chunks so a sentence split across a boundary survives in full in the next chunk.</p>
+<p>Embed each chunk independently. When a query matches the middle of a concept, the overlap chunk carries the complete thought instead of a severed one.</p>
+<p>Sentence-aware splitting helps. Cut on sentence boundaries near the token target rather than mid-word. A chunk that ends on a period reads cleaner and embeds more coherently.</p>
+
+<h2>Keep the unit atomic</h2>
+<p>Chunk by meaning, not just by size. If a section is one self-contained procedure, keep it whole even if it runs long. A procedure split in half is useless to both retriever and model.</p>
+<p>For tables and lists, treat the whole block as one chunk. A retrieved half-table invites the model to invent the missing rows.</p>
+<p>Give each chunk a short header line repeating the document title and section. The model then knows the source context even before the body text.</p>
+
+<h2>Metadata filtering before retrieval</h2>
+<p>Chunks should carry metadata: source, date, section, and language. Filter on that metadata before you embed-search, not after.</p>
+<p>If the user asks about the 2025 policy, drop every chunk tagged 2023. This removes stale contradictions that the model would otherwise blend into a confident lie.</p>
+<p>Namespace by document type. Contracts, FAQs, and changelogs have different trust weights. Retrieving only the right namespace cuts cross-source confusion.</p>
+
+<h2>Make the model cite, not improvise</h2>
+<p>Instruct the model to answer only from the provided chunks. Add: "If the context does not contain the answer, say you don't know." This single line removes most free fabrication.</p>
+<p>Ask for inline citations: "end each claim with [chunk id]." Now the reader can check. A model that must cite is a model that stays grounded.</p>
+<p>Re-rank the retrieved chunks by relevance to the query before passing them in. A small cross-encoder re-ranker moves the real answer to the top so the model sees it first.</p>
+
+<h2>The eval that catches drift</h2>
+<p>Build a set of 50 questions with known answers from your corpus. Run retrieval plus generation weekly. Track how often the answer cites the correct chunk.</p>
+<p>When accuracy drops, inspect the failing chunks. Usually a split boundary moved or a document was re-ingested with new formatting. Fix the chunker, not the model.</p>
+<p>Log the exact chunks fed to the model on every production query. When a user reports a wrong answer, you can see precisely which fragment misled it.</p>
+
+<h2>Hybrid search beats vectors alone</h2>
+<p>Pure semantic search misses exact matches. A serial number or error code has no semantic neighbor; the vector search ranks it last.</p>
+<p>Add keyword search on top. Combine the top results from both with a simple score merge. The exact-match query now surfaces the right chunk.</p>
+<p>This matters most for technical docs. Users paste an error string verbatim. If your retriever cannot match the literal string, no amount of semantic finesse saves you.</p>
+
+<h2>Chunk size is a knob, not a constant</h2>
+<p>Start at 400 tokens with 80 overlap. Measure citation accuracy on your eval set. If answers cite the wrong chunk, shrink the window so each chunk holds one idea.</p>
+<p>If answers feel context-starved, grow the window. The right size depends on your documents, not on a blog post. Tune it on real data.</p>
+<p>Re-chunk when you re-ingest. A document edited last week needs fresh chunks, not a stale merge. Track a content hash per source and rebuild only what changed.</p>
+
+<h2>Grounding is a pipeline, not a prompt</h2>
+<p>No single trick removes hallucinations. The overlap stops split facts. Metadata filtering stops stale contradictions. Cite-only prompting stops free invention. Re-ranking puts the answer first.</p>
+<p>Each layer covers a failure the others miss. Remove one and a class of wrong answers returns. Keep all four and the model stays inside the text.</p>
+<p>Measure end to end. A system that retrieves perfectly but prompts loosely still lies. Tune the chunker and the system prompt together against the same eval set.</p>
+
+<h2>Putting it together</h2>
+<p>Atomic overlapping chunks, metadata filtering, cite-only prompting, and a re-ranker form a pipeline where the model rarely faces a gap to fill. The result is grounded output the user can verify.</p>
+<p>If you need this wired into a running agent, our <a href="/custom-build/" class=inline>custom build</a> service sets up the chunker, vector store, and citation prompt as one deployable unit.</p>
+<p>The prompt side of this matters too: our <a href="/prompts/" class=inline>prompt packs</a> include a citation-enforcing system prompt tuned to keep the model inside the retrieved text.</p>
+
+<hr class=divider>
+<p class=muted>Related: <a href="/blog/prompt-packs-that-sell.html" class=inline>Why prompt packs sell (and the ones that don't)</a> · <a href="/blog/ai-agent-without-monthly-cost.html" class=inline>How to ship an AI agent with zero monthly infra cost</a></p>
+</div>
+</div>
+</body>
+</html>

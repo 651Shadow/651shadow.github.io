@@ -1,0 +1,50 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>AI Text Rewriter — Strata</title><meta name=description content="Rewrite, shorten, expand, or shift the tone of any text instantly in your browser. No signup, no upload.">
+<link rel="icon" href="/assets/favicon.svg">
+<link rel=stylesheet href="/assets/css/style.css"></head><body>
+<header class="nav"><div class="wrap nav-inner">
+<a href="/" class="brand"><span class="dot"></span>Strata <small>ai / systems</small></a>
+<nav class="nav-links" id="nav">
+<a href="/tools/">Tools</a><a href="/prompts/">Prompts</a><a href="/products/">Packs</a><a href="/blog/">Blog</a><a href="/custom-build/">Custom build</a><a href="/#news" class="nav-cta">Newsletter</a>
+</nav><button class="burger" id="burger" aria-label="menu">&#8801;</button>
+</div></header>
+<section class="tool-hero"><div class="wrap">
+<span class="eyebrow"><span class="pulse"></span>Free tool &middot; no signup</span>
+<h1>AI Text Rewriter</h1><p class="lede">A client-side rewrite engine. Pick a mode and reshape your text in one click. Your words never leave the page.</p>
+</div></section>
+<section><div class="wrap">
+<div class="tool-wrap">
+<label>Text to rewrite</label>
+<textarea id="src" placeholder="Paste the text you want to reshape..."></textarea>
+<label>Mode</label>
+<select id="mode">
+<option value="rewrite">Rewrite (fresh phrasing)</option>
+<option value="shorten">Shorten</option>
+<option value="expand">Expand</option>
+<option value="formal">Make formal</option>
+<option value="casual">Make casual</option>
+<option value="simplify">Simplify</option>
+</select>
+<button class="btn btn-primary mt" id="run">Rewrite</button>
+
+<div class="output" id="out">Your result appears here.</div>
+<button class="btn btn-ghost copy-btn" id="copy">Copy result</button>
+<p class="hint" id="hint">Runs entirely in your browser. Nothing is uploaded.</p>
+</div>
+<p class="muted mt">More free tools: <a href="/tools/" class="inline" style="color:var(--accent-2)">the toolkit &#8594;</a></p>
+</div></section>
+<footer><div class="wrap">
+<div class="foot-grid">
+<div class="foot-col" style="max-width:280px"><a href="/" class="brand" style="margin-bottom:12px"><span class="dot"></span>Strata</a><p class="muted" style="font-size:14px">Free AI tools, prompt packs, and done-for-you AI systems. Built by engineers, shipped in layers.</p></div>
+<div class="foot-col"><h5>Tools</h5><a href="/tools/rewriter.html">Text Rewriter</a><a href="/tools/summarizer.html">Summarizer</a><a href="/tools/prompt-builder.html">Prompt Builder</a><a href="/tools/estimator.html">Build Estimator</a></div>
+<div class="foot-col"><h5>Products</h5><a href="/products/">Prompt Packs</a><a href="/prompts/">Free Prompts</a><a href="/custom-build/">Custom Build</a><a href="/blog/">Blog</a></div>
+<div class="foot-col"><h5>Proof</h5><a href="https://theglitchstore.com" target="_blank" rel="noopener">The Glitch Store &#8599;</a><a href="https://github.com/651Shadow" target="_blank" rel="noopener">GitHub &#8599;</a><a href="https://x.com" target="_blank" rel="noopener">X / Twitter &#8599;</a></div>
+</div>
+<div class="foot-bottom"><span>&copy; 2026 Strata. Free to use. Built in layers.</span><span class="mono">privacy-first &middot; client-side &middot; no tracking</span></div>
+</div></footer>
+<script>
+const b=document.getElementById('burger'),n=document.getElementById('nav');
+b&&b.addEventListener('click',()=>n.classList.toggle('open'));
+const copyBtn=document.getElementById('copy'),out=document.getElementById('out');
+copyBtn&&copyBtn.addEventListener('click',()=>{if(!out.textContent)return;navigator.clipboard.writeText(out.textContent).then(()=>{copyBtn.textContent='Copied &#10003;';setTimeout(()=>copyBtn.textContent='Copy result',1400)})});
+</script></body></html>

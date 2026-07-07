@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>The WhatsApp AI bot blueprint (that doesn't get you banned)</title>
+<meta name=description content="Build a WhatsApp AI bot on the official Cloud API, not scraped sessions. Use template messages, rate limits, and opt-in flows to stay compliant and out of the ban bucket.">
+<link rel=stylesheet href="../assets/css/style.css">
+</head>
+<body>
+<div class=wrap>
+<div class=article>
+<h1>The WhatsApp AI bot blueprint (that doesn't get you banned)</h1>
+<div class=meta>2026 · 07 · Strata</div>
+<p>Most banned WhatsApp bots die for the same reason: they run on a personal account with an unofficial client. Meta detects the modified client and kills the number. The fix is to use the platform, not fight it.</p>
+
+<h2>Use the Cloud API, not a scraped session</h2>
+<p>The official WhatsApp Business Cloud API talks to Meta through a documented endpoint. No rooted phone, no WhatsApp Web scraping, no ban risk from client fingerprinting.</p>
+<p>You get a phone number ID and a permanent access token. Messages go out through Meta's servers. If Meta changes something, they tell you in the changelog, not with a ban.</p>
+<p>The trade-off is control. You cannot read every event the way a scraping setup pretends to. You do not need to. You need to send and receive text reliably.</p>
+
+<h2>The 24-hour window rule</h2>
+<p>WhatsApp lets you reply to a user for free only within 24 hours of their last message. After that, you must use a template message, which costs money and needs prior approval.</p>
+<p>Design your bot to finish the conversation inside that window. Ask the clarifying question immediately. Don't wait an hour to respond and lose the free thread.</p>
+<p>If the user goes silent for a day, send one approved template the next time you have something real to say. A "your report is ready" template is fine. A "hi, are you there?" template gets flagged as low-value.</p>
+
+<h2>Opt-in before you message</h2>
+<p>Meta requires proof the user opted in to receive messages from you. A checkbox on your site, a keyword reply, or a button click all count.</p>
+<p>Store the opt-in timestamp and method. If a user reports spam, you need that record. Without it, Meta sides with the user and throttles your number.</p>
+<p>Make opt-out trivial. Honor "stop" instantly and remove the number from your list. A working unsubscribe is the single best anti-ban signal you can send.</p>
+
+<h2>Rate limits are your friend</h2>
+<p>The Cloud API enforces tier-based sending limits: how many conversations you can start per day. New numbers start low. That is protective, not annoying.</p>
+<p>Warm up the number. Send to a few real users for a week. Let the quality score rise before you blast a campaign. A fresh number that suddenly messages 1,000 people looks like spam by definition.</p>
+<p>Queue outbound messages and spread them. A simple FIFO queue with a per-second cap keeps you under the rate ceiling without a 429 error storm.</p>
+
+<h2>Keep the AI on a leash</h2>
+<p>An LLM will happily generate a long answer, a joke, or a confident lie. None of those belong in a 24-hour support thread where the user wants a fact.</p>
+<p>Constrain the model with a tight system prompt that names the one job: answer order status, book a slot, or escalate. Refuse everything else with a short fallback.</p>
+<p>Log every model output. When a user reports a bad reply, you need the transcript to tune the prompt. Our <a href="/prompts/" class=inline>prompt packs</a> include a WhatsApp support persona tuned for short, compliant answers.</p>
+
+<h2>The deploy shape</h2>
+<p>One serverless function receives the webhook from Meta. It verifies the signature header, parses the message, calls the model, and posts the reply back through the send endpoint.</p>
+<p>Store message state in a key-value store keyed by phone number. You need just the last few turns and the 24-hour timer. No database server required.</p>
+
+<h2>Verify the webhook or get spoofed</h2>
+<p>Meta signs every webhook post with an HMAC header. Compute the same hash over the raw body using your app secret and compare. If they differ, drop the request.</p>
+<p>Without this check, anyone who learns your URL can inject fake messages and make your bot say anything. Signature verification is not optional.</p>
+<p>Also return a 200 fast. Meta retries on slow responses and may mark your endpoint unhealthy. Do the verification, then process async if the work is heavy.</p>
+
+<h2>Media without a media server</h2>
+<p>Users send photos and voice notes. Meta gives you a temporary URL for the media. Fetch it, store it in blob storage, and pass the stored link to the model if it handles files.</p>
+<p>Set a short TTL on stored media. A support photo from last month has no value and only costs you storage. Expire it after 30 days.</p>
+<p>For voice, transcribe with a speech endpoint before the model sees it. The model reasons on text, not audio. One transcription call is cheaper than streaming audio tokens.</p>
+
+<h2>Quality score is the real gate</h2>
+<p>Meta computes a quality score from user blocks and reports. High score raises your daily conversation limit automatically. Low score throttles you without warning.</p>
+<p>The fastest way to sink the score is sending unwanted templates. Every "stop" or report pulls it down. Every resolved query with no report pulls it up.</p>
+<p>Treat the score like a credit rating. Check it monthly in the dashboard. If it slips, cut volume and fix the prompts before Meta cuts it for you.</p>
+<p>If you want this built and wired to the Cloud API end to end, our <a href="/custom-build/" class=inline>custom build</a> service handles the number setup, template approval, and webhook security.</p>
+
+<hr class=divider>
+<p class=muted>Related: <a href="/blog/ai-agent-without-monthly-cost.html" class=inline>How to ship an AI agent with zero monthly infra cost</a> · <a href="/blog/prompt-packs-that-sell.html" class=inline>Why prompt packs sell (and the ones that don't)</a></p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Why prompt packs sell (and the ones that don't)</title>
+<meta name=description content="Prompt packs sell when they solve a named job with testable output. They fail when they are generic rewording of the model's default behavior. Here is the difference, with examples.">
+<link rel=stylesheet href="../assets/css/style.css">
+</head>
+<body>
+<div class=wrap>
+<div class=article>
+<h1>Why prompt packs sell (and the ones that don't)</h1>
+<div class=meta>2026 · 07 · Strata</div>
+<p>A prompt pack is a set of system prompts and input templates sold as a product. The ones that sell do a specific job the buyer cannot do in five minutes. The ones that don't are verbose restatements of what the model already does for free.</p>
+
+<h2>The test: would a free chat do it?</h2>
+<p>Open the model. Type "be a helpful recruiter." It already is. A pack that sells that framing adds nothing and will not sell.</p>
+<p>Now try "extract structured JSON of invoice fields from a scanned PDF, with these 14 keys, and refuse if tax ID is missing." That is a real, fiddly job. A pack that nails it saves an afternoon.</p>
+<p>If the buyer could get 90% of the value by writing one sentence, your pack is a sentence with formatting. Price it accordingly: zero.</p>
+
+<h2>Specific output format is the moat</h2>
+<p>Generic packs say "write good copy." Selling packs define the schema: length, tone, forbidden words, section order, and a validation step.</p>
+<p>Include a few-shot example in the prompt. Show the model exactly what "good" looks like for your domain. That example is the part buyers cannot easily write themselves.</p>
+<p>Add a self-check instruction at the end: "re-read the output and confirm it meets all constraints; if not, rewrite." This lifts quality enough that the pack feels different from raw chat.</p>
+<p>Our <a href="/prompts/" class=inline>prompt packs</a> ship with the schema, the few-shot, and the checker baked in, so the output is consistent on the first try.</p>
+
+<h2>Naming the buyer saves you</h2>
+<p>"Prompts for everyone" sells to no one. "Prompts for solo immigration lawyers drafting RFE responses" sells to a group with a painful, paid problem.</p>
+<p>Narrow packs convert better than broad ones even at a lower price. A lawyer will pay $29 to stop hand-writing RFE replies. A generalist will not pay $9 for "writing help."</p>
+<p>Write the pack's title as the job, not the tool. "Close more inbound demos" beats "sales prompts" by a mile.</p>
+
+<h2>What kills a pack</h2>
+<p>Vague instructions. If the prompt says "be creative and helpful," the model was already that. You charged for nothing.</p>
+<p>No failure handling. A pack that melts when given bad input forces the buyer to debug it. They refund instead.</p>
+<p>Over-promising the model. A pack claiming "never hallucinates" sets an expectation the model cannot meet. Buyers notice and talk.</p>
+<p>Missing the model it was tuned for. A prompt written for one model's quirks underperforms on another. State the target model in the pack.</p>
+
+<h2>Pack structure that holds up</h2>
+<p>Lead with a one-line job description. Then the system prompt. Then two worked examples. Then edge-case instructions. Then a short note on which model and temperature to use.</p>
+<p>Keep each prompt under 400 tokens where possible. Long prompts drift and confuse the model. Tight beats clever.</p>
+<p>Version the pack. When the model changes, your prompts may drift. Note the date and model version so buyers know what they bought.</p>
+
+<h2>Delivery format buyers trust</h2>
+<p>Ship the pack as a plain text file plus a JSON variant. The text is for reading; the JSON drops straight into an agent config without copy-paste errors.</p>
+<p>Include a three-line test. "Run this input, expect this output." A buyer who sees it work in thirty seconds stops doubting the purchase.</p>
+<p>Add a changelog. When you update for a new model, say what changed and why. Buyers on the old model can stay put without fear of breakage.</p>
+
+<h2>Pricing that matches the job</h2>
+<p>Charge for saved time, not for words. A pack that saves a freelancer two billable hours is worth more than its token count suggests.</p>
+<p>Bundle by role, not by feature. "The solo accountant pack" with three prompts outsells three separate $9 files because the buyer sees one solution.</p>
+<p>Offer a paid tier with support. The pack stays the same; the difference is you answer when it misbehaves on their data. That support margin is where the <a href="/products/" class=inline>paid packs</a> earn their keep.</p>
+
+<h2>Support tiers close the sale</h2>
+<p>Buyers fear the pack breaks on their data. A "I'll fix it if it does" line removes that fear and justifies a higher price.</p>
+<p>Scope the support tightly. Answer within 48 hours, on the pack only, no custom engineering. Anything bigger becomes a <a href="/custom-build/" class=inline>custom build</a>.</p>
+<p>This keeps your time bounded while the pack sells itself at the lower tier to the do-it-yourself crowd. Two products, one asset.</p>
+
+<h2>Where to point buyers next</h2>
+<p>A pack is a starting point, not the whole product. Buyers who want it running inside their own agent need the deploy shape from our <a href="/blog/ai-agent-without-monthly-cost.html" class=inline>zero-cost agent guide</a>.</p>
+<p>For production use with memory and retrieval, the chunking method in our RAG write-up keeps the model fed with the right context so the prompt's constraints actually apply.</p>
+
+<hr class=divider>
+<p class=muted>Related: <a href="/blog/rag-without-hallucinations.html" class=inline>RAG without the hallucinations: chunking that actually works</a> · <a href="/blog/ai-agent-without-monthly-cost.html" class=inline>How to ship an AI agent with zero monthly infra cost</a></p>
+</div>
+</div>
+</body>
+</html>
