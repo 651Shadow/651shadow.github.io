@@ -1,4 +1,6 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self' https://formspree.io https://*.formspree.io; base-uri 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Custom AI Build — Strata</title><meta name=description content="Strata builds AI agents, automation, RAG systems and web apps. Fixed quotes, security-first, live proof at theglitchstore.com.">
 <link rel="icon" href="/assets/favicon.svg">
 <link rel=stylesheet href="/assets/css/style.css"></head><body>
@@ -28,6 +30,7 @@
 </div>
 <div class="news mt"><h2>Start a build.</h2><p>Send the outcome you want. We reply with a scope and a number. No call required to start.</p>
 <form action="https://formspree.io/f/REPLACE_ME" method="POST" target="_blank" style="max-width:520px;margin:0 auto">
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 <input type="text" name="name" placeholder="Your name" required style="margin-bottom:10px">
 <input type="email" name="email" placeholder="you@company.com" required style="margin-bottom:10px">
 <textarea name="outcome" placeholder="What do you want built, and what outcome should it produce?" required style="margin-bottom:10px"></textarea>

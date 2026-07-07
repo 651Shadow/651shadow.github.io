@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self' https://formspree.io https://*.formspree.io; base-uri 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Strata — Free AI tools, prompt packs & done-for-you AI systems</title>
 <meta name="description" content="Strata is a public collection of free, privacy-first AI tools and battle-tested prompt packs — plus done-for-you AI automation and web systems built by engineers, not generalists.">
 <meta name="keywords" content="free AI tools, prompt packs, AI automation, WhatsApp bot, RAG, web app, AI agents, no signup AI">
@@ -164,6 +166,7 @@
       <h2>One useful email a week.</h2>
       <p>No spam. A free tool drop, a prompt worth keeping, and one field note on building AI systems. Unsubscribe anytime.</p>
       <form id="news-form" action="https://formspree.io/f/REPLACE_ME" method="POST" target="_blank">
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <input type="email" name="email" placeholder="you@domain.com" required>
         <button type="submit" class="btn btn-primary">Subscribe</button>
       </form>

@@ -3,6 +3,8 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self' https://formspree.io https://*.formspree.io; base-uri 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>How to ship an AI agent with zero monthly infra cost</title>
 <meta name=description content="Run a production AI agent for $0/month. Use Cloudflare Workers, a serverless function, and on-demand model calls so you pay only per request, not for idle uptime.">
 <link rel=stylesheet href="../assets/css/style.css">
