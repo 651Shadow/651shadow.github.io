@@ -42,4 +42,9 @@
 <script>
 const b=document.getElementById('burger'),n=document.getElementById('nav');
 b&&b.addEventListener('click',()=>n.classList.toggle('open'));
+// Gumroad links are placeholders until Shadow wires real product URLs.
+// Clicking a placeholder link is blocked so nothing 404s live.
+document.querySelectorAll('a[href^="REPLACE_GUMROAD"]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();alert('Product link not set yet. Add your Gumroad URL in products/index.html (REPLACE_GUMROAD_*).');});
+});
 </script></body></html>
