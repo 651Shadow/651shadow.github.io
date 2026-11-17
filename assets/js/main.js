@@ -11,6 +11,9 @@
   const contactForm = document.getElementById("contact-form");
   const togglePdfBtn = document.getElementById("toggle-raw-pdf");
   const pdfIframe = document.getElementById("pdf-report-iframe");
+  const toggleGlitchBtn = document.getElementById("toggle-glitch-arch");
+  const glitchIframe = document.getElementById("glitch-store-iframe");
+  const glitchBarLabel = document.getElementById("glitch-bar-label");
 
   const savedTheme = localStorage.getItem("portfolio-theme");
   if (savedTheme === "light" || savedTheme === "dark") {
@@ -112,9 +115,32 @@
     if (showingRaw) {
       pdfIframe.setAttribute("src", "/previews/security-snapshot-pdf.html");
       togglePdfBtn.textContent = "Raw PDF";
+      togglePdfBtn.setAttribute("aria-pressed", "false");
     } else {
       pdfIframe.setAttribute("src", "/assets/docs/Security-Snapshot-Sample-Report.pdf");
       togglePdfBtn.textContent = "Interactive View";
+      togglePdfBtn.setAttribute("aria-pressed", "true");
+    }
+  });
+
+  toggleGlitchBtn?.addEventListener("click", () => {
+    if (!glitchIframe) return;
+    const current = glitchIframe.getAttribute("src") || "";
+    const showingArch = current.includes("glitch-store-architecture");
+    if (showingArch) {
+      glitchIframe.setAttribute("src", "/previews/theglitchstore.html");
+      toggleGlitchBtn.textContent = "Security Architecture";
+      toggleGlitchBtn.setAttribute("aria-pressed", "false");
+      if (glitchBarLabel) {
+        glitchBarLabel.textContent = "https://theglitchstore.com (Landing Page Preview)";
+      }
+    } else {
+      glitchIframe.setAttribute("src", "/previews/glitch-store-architecture.html");
+      toggleGlitchBtn.textContent = "Landing Preview";
+      toggleGlitchBtn.setAttribute("aria-pressed", "true");
+      if (glitchBarLabel) {
+        glitchBarLabel.textContent = "The Glitch Store (Architecture & Threat Model)";
+      }
     }
   });
 })();

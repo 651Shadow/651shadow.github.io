@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'self'">
+  <title>CV | Abdelrahman Magdy Hamida (@651Shadow)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px 14px 40px;
+      background: #09080f;
+      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .toolbar {
+      max-width: 820px;
+      margin: 0 auto 14px;
+      padding: 10px 14px;
+      background: #110f1a;
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: #c4b5fd;
+    }
+    .toolbar-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .toolbar a {
+      color: #f5f3ff;
+      text-decoration: none;
+      border: 1px solid #7c3aed;
+      padding: 5px 10px;
+      background: rgba(124, 58, 237, 0.2);
+    }
+    .toolbar a.primary { background: #7c3aed; color: #ffffff; font-weight: 700; }
+    .toolbar a:hover { background: #6d28d9; color: #ffffff; }
+    .sheet {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #d4d4d8;
+      padding: 28px 34px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+    .cv-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    h1 { margin: 0; font-size: 24px; letter-spacing: -0.02em; color: #0f0a1e; }
+    .handle { font-family: ui-monospace, monospace; color: #6d28d9; font-weight: 700; font-size: 14px; }
+    .role { margin: 2px 0 6px; font-weight: 700; color: #374151; font-size: 14.5px; }
+    .meta-line { font-size: 12.5px; color: #4b5563; margin: 2px 0; }
+    .meta-line a { color: #5b21b6; text-decoration: none; }
+    h2 {
+      margin: 16px 0 8px;
+      font-size: 12px;
+      font-family: ui-monospace, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5b21b6;
+      border-bottom: 1px solid #c4b5fd;
+      padding-bottom: 3px;
+    }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .entry-title { font-weight: 700; color: #111827; font-size: 13.5px; }
+    .entry-date { font-family: ui-monospace, monospace; font-size: 12px; color: #5b21b6; }
+    .entry-sub { color: #4b5563; font-size: 12.5px; margin-bottom: 4px; }
+    ul { margin: 4px 0 8px; padding-left: 18px; }
+    li { margin-bottom: 4px; font-size: 13px; color: #1f2937; }
+    .proj-item { margin-bottom: 7px; }
+    .proj-item strong { display: block; font-size: 13px; color: #111827; }
+    .proj-item span { font-size: 12.5px; color: #374151; }
+    .skills-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    .skills-table td { padding: 3px 0; vertical-align: top; font-size: 12.8px; color: #374151; }
+    .skills-table td:first-child { width: 190px; font-weight: 700; color: #111827; padding-right: 10px; }
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .toolbar { display: none; }
+      .sheet { box-shadow: none; border: none; padding: 14px 18px; }
+    }
+    @media (max-width: 600px) {
+      .sheet { padding: 18px 16px; }
+      .skills-table td { display: block; width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span>root@651shadow:~# cat cv.pdf</span>
+    <div class="toolbar-actions">
+      <a href="/">Back to Portfolio</a>
+      <a class="primary" href="/assets/docs/Abdelrahman-Hamida-CV.pdf" download>Download ATS PDF</a>
+    </div>
+  </div>
+
+  <main class="sheet">
+    <div class="cv-head">
+      <h1>ABDELRAHMAN MAGDY HAMIDA</h1>
+      <span class="handle">@651Shadow</span>
+    </div>
+    <div class="role">Cybersecurity Student (AppSec) &amp; Full-Stack Engineer</div>
+    <div class="meta-line">Alexandria, Egypt (UTC+2 / EET, EU/UK full &amp; US East morning overlap) | <a href="mailto:abdelrahman.m.magdy@gmail.com">abdelrahman.m.magdy@gmail.com</a></div>
+    <div class="meta-line">Portfolio: <a href="https://651shadow.github.io">https://651shadow.github.io</a> | GitHub: <a href="https://github.com/651Shadow">github.com/651Shadow</a> | LinkedIn: <a href="https://www.linkedin.com/in/abdelrhman-hamida/">linkedin.com/in/abdelrhman-hamida</a></div>
+
+    <h2>Profile &amp; Availability</h2>
+    <p style="margin:0;font-size:13px;color:#1f2937;">
+      Network &amp; Cyber Security undergraduate at SUTech (expected 2029) targeting Application Security, Cybersecurity, and Full-Stack Engineering internships (Summer/Fall 2026-2027 or part-time remote). Hands-on experience hardening Next.js and Supabase backends against SSRF, RLS privilege escalation, and credit ledger races, designing segmented Cisco VLAN topologies, and building Python automation pipelines.
+    </p>
+
+    <h2>Education</h2>
+    <div class="entry-head">
+      <span class="entry-title">B.Tech in Computer Science Technology (Network &amp; Cyber Security)</span>
+      <span class="entry-date">2025 - 2029 (Expected)</span>
+    </div>
+    <div class="entry-sub">Elsewedy University of Technology - Polytechnic of Egypt (SUTech) | Alexandria, Egypt</div>
+    <ul>
+      <li>Coursework &amp; Labs: Enterprise VLAN segmentation, inter-VLAN ACLs, PAT/NAT, NetFlow v9 collector telemetry, centralized Syslog, and systems security.</li>
+    </ul>
+
+    <h2>Engineering &amp; Security Experience</h2>
+    <div class="entry-head">
+      <span class="entry-title">Founder &amp; Full-Stack / Security Engineer | The Glitch Store (theglitchstore.com)</span>
+      <span class="entry-date">2026 - Present</span>
+    </div>
+    <ul>
+      <li>Engineered a prepaid-credit API gateway and marketplace in Next.js 16, React 19, TypeScript, and Supabase (52 SQL migrations, 48 API routes) serving first-party utilities (Web to Markdown, Web Extract, DNS Lookup, Hash) and wrapped endpoints.</li>
+      <li>Eliminated O(N) Argon2id verification CPU DoS via indexed HMAC-SHA256 key lookup hashes (64-byte cap) with Argon2id verification, and encrypted upstream provider secrets with AES-256-GCM.</li>
+      <li>Implemented multi-layer SSRF protection (<code>validateUpstreamUrlBeforeFetch</code>) with DNS resolution IP checks across private/CGNAT/metadata CIDRs and manual redirect rejection, plus atomic Postgres <code>deduct_credits</code> RPC with <code>CHECK (credits_balance &gt;= 0)</code>.</li>
+    </ul>
+
+    <div class="entry-head">
+      <span class="entry-title">Independent Security Reviewer &amp; Python Automation Developer | Contra</span>
+      <span class="entry-date">2026 - Present</span>
+    </div>
+    <ul>
+      <li>Deliver fixed-scope Next.js + Supabase security reviews inspecting RLS policies, SSRF boundaries, stored XSS, CSP/HSTS headers, and payment webhook idempotency.</li>
+      <li>Build Python scraping, ETL, PDF parsing, and Excel reporting tools with Playwright, httpx, BeautifulSoup, pypdf, openpyxl, and automated pytest suites.</li>
+    </ul>
+
+    <h2>Selected Technical Proof &amp; Repositories</h2>
+    <div class="proj-item">
+      <strong>15-Finding SaaS Security Snapshot &amp; Report Samples (github.com/651Shadow/saas-security-snapshot-sample)</strong>
+      <span>Sanitized 3-page PDF and 15-finding ledger derived from the pre-launch security audit of The Glitch Store (3 Critical, 4 High, 5 Medium, 3 Low) showing exact root causes and SQL/TypeScript fixes.</span>
+    </div>
+    <div class="proj-item">
+      <strong>University Department 5-VLAN Network Topology (CET261, Cisco Packet Tracer 9.0.1)</strong>
+      <span>Segmented Faculty, Student, Admin, Management, and Guest Wi-Fi VLANs with directional inter-VLAN ACLs, DHCP relay, PAT/NAT, NetFlow v9, and centralized Syslog logging.</span>
+    </div>
+    <div class="proj-item">
+      <strong>Web-to-Markdown API (github.com/651Shadow/web-to-markdown-api | web-to-markdown-api.vercel.app)</strong>
+      <span>Serverless TypeScript API converting live URLs or HTML into clean Markdown for LLM/RAG pipelines while rejecting localhost, private IPs, and internal redirects.</span>
+    </div>
+    <div class="proj-item">
+      <strong>Python Automation &amp; Scraping Suite (github.com/651Shadow/automation-portfolio-suite)</strong>
+      <span>Streamlit suite covering B2B lead deduplication/normalization, PDF invoice extraction + renamed ZIP bundles, Slack/email competitor price alerting, openpyxl formatting, and 5 passing pytest checks.</span>
+    </div>
+    <div class="proj-item">
+      <strong>Taza Produce Web Platform (github.com/651Shadow/taza-produce | taza-produce.vercel.app)</strong>
+      <span>Seven-route Next.js 16 &amp; TypeScript application engineered to WCAG 2.2 AA contrast standards with theme switching, AVIF/WebP media, and rate-limited forms.</span>
+    </div>
+
+    <h2>Technical Skills &amp; Certification Roadmap</h2>
+    <table class="skills-table">
+      <tr><td>Security &amp; Networking</td><td>OWASP Top 10, Supabase Postgres RLS, SSRF/XSS/TOCTOU defense, Argon2id, AES-256-GCM, HMAC indexing, Cisco Packet Tracer, VLANs, ACLs, NAT, NetFlow, Syslog</td></tr>
+      <tr><td>Full-Stack &amp; Databases</td><td>TypeScript, JavaScript, Next.js 16, React 19, NestJS, Supabase, PostgreSQL (PL/pgSQL, RPCs, triggers), SQL, Tailwind CSS, Vercel, Git</td></tr>
+      <tr><td>Python, AI &amp; Agents</td><td>Python, Playwright, Selenium, httpx, BeautifulSoup, pypdf, openpyxl, Streamlit, pytest, RAG Markdown ingestion pipelines, MCP tool integration</td></tr>
+      <tr><td>Certifications Roadmap</td><td>In progress (none held yet): CompTIA Security+ (SY0-701), Cisco CCST Cybersecurity / CCNA</td></tr>
+    </table>
+  </main>
+</body>
+</html>

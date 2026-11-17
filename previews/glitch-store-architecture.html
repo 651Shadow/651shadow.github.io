@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'self'">
+  <title>The Glitch Store | Security Architecture &amp; Threat Model</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #07060d;
+      color: #f5f3ff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(9, 8, 15, 0.95);
+      border-bottom: 1px solid rgba(167, 139, 250, 0.35);
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 11.5px;
+    }
+    header a {
+      color: #c4b5fd;
+      text-decoration: none;
+      border: 1px solid rgba(167, 139, 250, 0.45);
+      padding: 3px 8px;
+    }
+    header a:hover { background: rgba(124, 58, 237, 0.25); color: #ffffff; }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .panel {
+      background: #110f1a;
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      padding: 16px;
+    }
+    .kicker {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #c4b5fd;
+      border: 1px solid rgba(167, 139, 250, 0.45);
+      background: rgba(124, 58, 237, 0.16);
+      padding: 2px 7px;
+      margin-bottom: 8px;
+    }
+    h1 { margin: 0 0 6px; font-size: 20px; color: #f5f3ff; }
+    h2 { margin: 0 0 8px; font-size: 15px; color: #c4b5fd; border-bottom: 1px solid rgba(167, 139, 250, 0.2); padding-bottom: 5px; }
+    p { margin: 0 0 8px; color: #b4adc9; }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .stat-box {
+      background: #09080f;
+      border: 1px solid rgba(167, 139, 250, 0.28);
+      padding: 8px 10px;
+    }
+    .stat-val { font-size: 16px; font-weight: 700; color: #a78bfa; }
+    .stat-lbl { font-size: 10.5px; color: #94a3b8; }
+    pre {
+      margin: 8px 0;
+      padding: 10px 12px;
+      background: #050508;
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      color: #e9d5ff;
+      font-size: 11.5px;
+      line-height: 1.48;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .tradeoff {
+      border-left: 3px solid #7c3aed;
+      background: rgba(124, 58, 237, 0.1);
+      padding: 9px 12px;
+      margin-top: 8px;
+      font-size: 12.5px;
+      color: #ddd6fe;
+    }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .cat-item {
+      background: #09080f;
+      border: 1px solid rgba(167, 139, 250, 0.25);
+      padding: 8px 10px;
+    }
+    .cat-item strong { display: block; color: #f5f3ff; font-size: 12.5px; }
+    .cat-item span { font-size: 11.5px; color: #b4adc9; }
+    @media (max-width: 640px) {
+      .stat-row, .catalog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mono">
+    <span>root@651shadow:~# ./architecture --target=theglitchstore.com</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <a href="/previews/theglitchstore.html">Landing Preview</a>
+      <a href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">Open Live Site</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="kicker mono">SANITISED ARCHITECTURE &amp; THREAT MODEL</div>
+      <h1>The Glitch Store: Prepaid API Gateway Hardening</h1>
+      <p>
+        The Glitch Store is kept private in Git because it contains commercial billing configuration, admin workflow prompts, and operational scripts. This technical note publishes the exact security controls, Postgres schemas, and TypeScript proxy patterns implemented across its 52 SQL migrations and 48 Next.js route handlers, along with known residual trade-offs.
+      </p>
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-val mono">O(1) + Argon2id</div><div class="stat-lbl">HMAC lookup index before KDF</div></div>
+        <div class="stat-box"><div class="stat-val mono">DNS + CIDR</div><div class="stat-lbl">Pre-fetch SSRF IP validation</div></div>
+        <div class="stat-box"><div class="stat-val mono">AES-256-GCM</div><div class="stat-lbl">12-byte IV + 16-byte auth tag</div></div>
+        <div class="stat-box"><div class="stat-val mono">CHECK &gt;= 0</div><div class="stat-lbl">Atomic Postgres deduct_credits</div></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>1. Preventing Argon2id CPU Exhaustion via O(1) Indexed Lookup</h2>
+      <p>
+        <strong>Pre-audit flaw (F-03 / AUDIT-004):</strong> API keys share a static <code>gstore_</code> prefix. Earlier queries filtered <code>user_api_keys</code> by <code>key_prefix</code> and looped over returned candidate rows running <code>argon2id</code> verification on each row. An attacker could force repeated expensive password-hash evaluations per HTTP request.
+      </p>
+      <p>
+        <strong>Implemented fix (<code>src/lib/api-keys/lookup.ts</code> + migration <code>0035_api_key_lookup_hash.sql</code>):</strong>
+        Incoming headers are capped at 64 bytes via <code>capKeyInput()</code> before any hashing. We compute an indexed HMAC-SHA256 prehash keyed by server secret <code>KEY_LOOKUP_PEPPER</code>, fetch at most one row by equality on <code>key_lookup_hash</code>, and run <code>argon2id</code> verification once against the stored <code>key_hash</code>. Plaintext keys are never persisted.
+      </p>
+<pre class="mono">// src/lib/api-keys/lookup.ts + src/app/api/secure-proxy/route.ts
+const cappedKey = capKeyInput(apiKey); // rejects keys &gt; 64 bytes
+const lookupHash = computeKeyLookupHash(cappedKey); // HMAC-SHA256(key, KEY_LOOKUP_PEPPER)
+
+const { data: candidate } = await admin
+  .from("user_api_keys")
+  .select("id,user_id,key_hash,salt")
+  .eq("key_lookup_hash", lookupHash);
+
+// argon2id remains the single cryptographic source of truth on the indexed row</pre>
+      <div class="tradeoff">
+        <strong>Security note:</strong> HMAC lookup prevents attackers from forcing O(N) KDF scans and reveals nothing without the server pepper, while Argon2id still enforces slow-hash verification on the matched key row. Legacy rows without <code>key_lookup_hash</code> use a tight fallback cap until rotated.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>2. Multi-Layer SSRF &amp; DNS-Rebinding Guard (Node Proxy + Neutralized Edge Mirror)</h2>
+      <p>
+        <strong>Pre-audit flaw (F-04 / C1 &amp; AUDIT-003):</strong> Both the Next.js route and an older Deno Edge Function (<code>supabase/functions/secure-proxy/index.ts</code>) could forward traffic to arbitrary upstream <code>base_url</code> targets or follow 3xx redirects without validating resolved IPs.
+      </p>
+      <p>
+        <strong>Implemented fix (<code>src/lib/local-apis/upstream-proxy.ts</code>):</strong>
+        First, <code>buildForwardUrl()</code> performs up to 8 decoding passes to reject obfuscated traversal (<code>%2e</code>, <code>..</code>, backslashes, control chars). Next, <code>validateUpstreamUrlBeforeFetch()</code> rejects non-HTTP(S) schemes, embedded URL credentials, <code>localhost</code> / <code>.local</code>, cloud metadata hosts (<code>169.254.169.254</code>, <code>metadata.google.internal</code>), enforces <code>ALLOWED_UPSTREAM_HOSTS</code> when configured, and runs <code>dns.promises.lookup(hostname, { all: true })</code> checking every IPv4/IPv6 record against private, loopback, link-local, CGNAT (<code>100.64.0.0/10</code>), IPv4-mapped IPv6 (<code>::ffff:</code>), and NAT64 blocks. Finally, <code>fetch()</code> uses <code>redirect: "manual"</code> and rejects <code>3xx</code> or unexpected HTTP 200 HTML error pages with <code>502</code>. The redundant Deno edge proxy was fail-closed with <code>503</code>.
+      </p>
+      <div class="tradeoff">
+        <strong>Residual TOCTOU trade-off:</strong> Calling <code>dns.lookup()</code> right before standard <code>fetch()</code> stops static internal DNS records, but a zero-TTL rebinding record could theoretically rotate between lookup and socket connect unless <code>ALLOWED_UPSTREAM_HOSTS</code> allowlisting is active or the resolved IP is pinned inside a custom HTTP dispatcher/agent.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>3. Upstream Secret Encryption at Rest (AES-256-GCM)</h2>
+      <p>
+        <strong>Implemented in <code>src/lib/crypto.ts</code> (F-05 remediation):</strong> Third-party provider keys stored in <code>apis.admin_api_key_encrypted</code> are encrypted server-side using Node <code>aes-256-gcm</code> with a 32-byte key derived from <code>ADMIN_KEY_ENCRYPTION_KEY</code>, a fresh 12-byte random IV per write, and a 16-byte authentication tag. Column-level public read privileges on encrypted credential columns and internal <code>base_url</code> fields are revoked from <code>anon</code> and <code>authenticated</code> Postgres roles.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>4. Atomic Credit Deduction &amp; Non-Negative Balance Invariants</h2>
+      <p>
+        <strong>Pre-audit flaw (F-06 / AUDIT-001):</strong> Trigger <code>handle_credits_ledger_insert()</code> lacked a <code>&gt;= 0</code> guard, and concurrent API bursts could drive <code>users.credits_balance</code> negative.
+      </p>
+      <p>
+        <strong>Implemented fix (<code>supabase/migrations/0034_atomic_deduct_credits.sql</code>):</strong>
+        Added <code>NOT NULL</code> and <code>CHECK (credits_balance &gt;= 0)</code> on <code>public.users</code>, raised SQLSTATE <code>23514</code> in the ledger trigger on underflow, and introduced the conditional Postgres RPC below. On <code>deductError</code>, <code>secure-proxy</code> returns <code>402 Payment Required</code>.
+      </p>
+<pre class="mono">-- supabase/migrations/0034_atomic_deduct_credits.sql (SECURITY DEFINER, service_role only)
+update public.users
+  set credits_balance = credits_balance - p_amount
+where id = p_user_id
+  and credits_balance &gt;= p_amount
+returning credits_balance into v_balance;</pre>
+      <div class="tradeoff">
+        <strong>Concurrency note:</strong> Credits are checked pre-flight and atomically debited after a non-HTML 2xx response so users never pay for upstream failures. Under simultaneous burst race conditions against a low balance, Postgres prevents negative balances cleanly; full elimination of one extra upstream forward before <code>402</code> is a two-phase pre-hold extension.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>5. Gateway Catalog: First-Party Endpoints vs. Curated Wrappers</h2>
+      <p>
+        The live public marketplace highlights the core Markdown and extraction APIs while the gateway routing layer (<code>src/lib/catalog/launch-catalog.ts</code>) covers 10 seeded utility slugs:
+      </p>
+      <div class="catalog-grid">
+        <div class="cat-item"><strong>First-Party / Custom Endpoints (5)</strong><span>Web to Markdown (<code>web-to-markdown</code>), Web Extract + Enrich (<code>web-extract</code>), DNS Lookup API (<code>dns-lookup</code>), Hash &amp; Checksum API (<code>hash</code>), Disposable Email Checker (<code>email-disposable-check</code>).</span></div>
+        <div class="cat-item"><strong>Wrapped Proxy Utilities (5)</strong><span>Weather API (Open-Meteo), Crypto Market API (CoinGecko), Exchange Rate API, IP Geolocation API, Name Intelligence API.</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
