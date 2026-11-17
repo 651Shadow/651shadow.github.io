@@ -6,14 +6,15 @@
   const filterBtns = Array.from(document.querySelectorAll("[data-filter]"));
   const projectCards = Array.from(document.querySelectorAll(".project-card"));
   const projectCount = document.getElementById("project-count");
-  const copyBtn = document.getElementById("copy-email");
+  const copyBtns = Array.from(document.querySelectorAll("[data-copy-email]"));
   const copyStatus = document.getElementById("copy-status");
+  const heroCopyStatus = document.getElementById("hero-copy-status");
 
-  // Theme initialization
   const savedTheme = localStorage.getItem("portfolio-theme");
   if (savedTheme === "light" || savedTheme === "dark") {
     root.setAttribute("data-theme", savedTheme);
   }
+
   const syncThemeLabel = () => {
     if (!themeBtn) return;
     const isLight = root.getAttribute("data-theme") === "light";
@@ -29,7 +30,6 @@
     syncThemeLabel();
   });
 
-  // Mobile nav
   navToggle?.addEventListener("click", () => {
     const open = navLinks?.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", String(Boolean(open)));
@@ -50,7 +50,6 @@
     }
   });
 
-  // Project filter
   const applyFilter = (category) => {
     let visible = 0;
     projectCards.forEach((card) => {
@@ -74,17 +73,24 @@
     });
   });
 
-  // Copy email
-  copyBtn?.addEventListener("click", async () => {
-    const email = copyBtn.getAttribute("data-email") || "abdelrhman.dado123@gmail.com";
-    try {
-      await navigator.clipboard.writeText(email);
-      if (copyStatus) copyStatus.textContent = "Copied to clipboard";
-    } catch {
-      if (copyStatus) copyStatus.textContent = email;
-    }
-    setTimeout(() => {
-      if (copyStatus) copyStatus.textContent = "";
-    }, 2500);
+  copyBtns.forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const email = btn.getAttribute("data-email") || "abdelrahman.m.magdy@gmail.com";
+      const targetId = btn.getAttribute("data-status-target");
+      const targetEl = targetId ? document.getElementById(targetId) : copyStatus;
+      let msg = "Copied to clipboard";
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch {
+        msg = email;
+      }
+      if (targetEl) targetEl.textContent = msg;
+      if (!targetId && heroCopyStatus && btn.id === "hero-copy-email") {
+        heroCopyStatus.textContent = msg;
+      }
+      setTimeout(() => {
+        if (targetEl) targetEl.textContent = "";
+      }, 2500);
+    });
   });
 })();
