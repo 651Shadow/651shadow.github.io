@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Abdelrahman Hamida (@651Shadow) // Cybersecurity &amp; Full-Stack Engineer</title>
+  <title>Abdelrahman Hamida (@651Shadow) | Cybersecurity &amp; Full-Stack Engineer</title>
   <meta name="description" content="Personal portfolio of Abdelrahman Hamida (@651Shadow): Network and Cyber Security student at SUTech (Class of 2029), SaaS security reviewer, full-stack developer, and Python automation builder.">
   <link rel="canonical" href="https://651shadow.github.io/">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="Abdelrahman Hamida (@651Shadow) // Cybersecurity &amp; Full-Stack Engineer">
+  <meta property="og:title" content="Abdelrahman Hamida (@651Shadow) | Cybersecurity &amp; Full-Stack Engineer">
   <meta property="og:description" content="SaaS security reviews, full-stack Next.js and Supabase apps, Python scrapers, and Cisco VLAN security labs.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://651shadow.github.io/">
@@ -25,20 +25,29 @@
 
   <header class="site-header">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true">AH</span>
-        <span>Abdelrahman Hamida</span>
-        <span class="brand-handle">@651Shadow</span>
+      <a class="brand" href="#top" aria-label="root@651shadow:~# Home">
+        <span class="prompt-user">root@651shadow</span><span class="prompt-path">:~#</span><span class="prompt-cursor" aria-hidden="true"></span>
       </a>
 
       <div class="nav-actions">
         <nav class="nav-links" id="nav-links" aria-label="Primary">
-          <a href="#focus">Focus</a>
-          <a href="#projects">Work</a>
-          <a href="#education">Stack</a>
-          <a href="#connect">Links</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#connect">Contact</a>
         </nav>
-        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Light</button>
+
+        <button class="theme-switch" id="theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Dark mode enabled, switch to light mode">
+          <span class="switch-icon" aria-hidden="true">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+          <span class="switch-icon" aria-hidden="true">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg>
+          </span>
+          <span class="switch-thumb" aria-hidden="true"></span>
+        </button>
+
         <button class="icon-btn burger" id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
       </div>
     </div>
@@ -48,150 +57,181 @@
     <section class="hero" id="top">
       <div class="wrap split-hero">
         <div class="hero-left">
-          <div class="prompt-line">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span>~/651shadow $ status --open internships,freelance</span>
-          </div>
+          <div class="avail-pill">Available for internships &amp; AppSec reviews</div>
 
-          <h1>Abdelrahman Hamida</h1>
-          <div class="hero-meta">
-            <span>@651Shadow</span>
-            <span class="sep" aria-hidden="true">//</span>
-            <span>SUTech Network &amp; Cyber Security '29</span>
-            <span class="sep" aria-hidden="true">//</span>
-            <span>Alexandria, Egypt</span>
-          </div>
+          <h1>Hey, I'm <span class="accent-name">Abdelrahman</span></h1>
+          <div class="hero-role">Cybersecurity Student &amp; Full-Stack Engineer</div>
 
           <p class="hero-lede">
-            I study Network and Cyber Security at SUTech and build web apps, APIs, and Python automation scripts. Mostly, I spend my time where code usually breaks in production: auth checks, payment ledgers, proxy validation, and messy data pipelines.
-          </p>
-          <p class="hero-note">
-            I don't hold commercial certs yet (Class of 2029), so I let shipped deployments and public security audit samples speak first.
+            I study Network and Cyber Security at SUTech (Class of 2029) and build web apps, APIs, and Python automation scripts out of Alexandria, Egypt. Most days I'm focused on the layer where software breaks in production: auth boundaries, credit ledgers, and input validation.
           </p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="#projects">See Shipped Work</a>
-            <a class="btn btn-secondary" href="#connect">Links &amp; Socials</a>
-            <a class="btn btn-secondary" href="mailto:abdelrahman.m.magdy@gmail.com">Email Me</a>
+            <a class="btn btn-primary" href="#projects">View my work</a>
+            <a class="btn btn-secondary" href="#connect">Get in touch</a>
           </div>
 
           <div class="social-strip" aria-label="Quick links">
             <a class="social-chip" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">
-              <span class="chip-label">gh/</span>
-              <span>651Shadow ↗</span>
+              <span class="chip-prefix">gh/</span><span>651Shadow</span>
             </a>
             <a class="social-chip" href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">
-              <span class="chip-label">in/</span>
-              <span>abdelrhman-hamida ↗</span>
+              <span class="chip-prefix">in/</span><span>abdelrhman-hamida</span>
             </a>
             <a class="social-chip" href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">
-              <span class="chip-label">x/</span>
-              <span>@abdomhamida ↗</span>
+              <span class="chip-prefix">x/</span><span>@abdomhamida</span>
             </a>
             <a class="social-chip" href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">
-              <span class="chip-label">contra/</span>
-              <span>abdelrahman_hamida ↗</span>
+              <span class="chip-prefix">contra/</span><span>abdelrahman_hamida</span>
             </a>
             <a class="social-chip" href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">
-              <span class="chip-label">devpost/</span>
-              <span>abdelrhman-dado123 ↗</span>
-            </a>
-            <a class="social-chip" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">
-              <span class="chip-label">app/</span>
-              <span>theglitchstore.com ↗</span>
+              <span class="chip-prefix">devpost/</span><span>abdelrhman-dado123</span>
             </a>
           </div>
         </div>
 
-        <aside class="hero-right panel panel-reticle dossier" aria-label="Profile snapshot">
-          <div class="dossier-head">
-            <span>SYS.NODE // ALEXANDRIA_EG</span>
-            <span class="dossier-live">ONLINE</span>
+        <aside class="hero-right panel snapshot-panel" aria-label="Profile snapshot">
+          <div class="snapshot-head">
+            <span>@651Shadow</span>
+            <span>Alexandria, EG</span>
           </div>
 
-          <div class="telemetry-grid">
-            <div class="metric-box">
+          <div class="metric-table">
+            <div class="metric-cell">
               <div class="metric-val">15</div>
-              <div class="metric-label">Findings documented in my redacted Next.js + Supabase audit sample</div>
+              <div class="metric-label">Findings in redacted Next.js + Supabase audit sample</div>
             </div>
-            <div class="metric-box">
+            <div class="metric-cell">
               <div class="metric-val">9+</div>
-              <div class="metric-label">Utility APIs routed behind The Glitch Store prepaid proxy</div>
+              <div class="metric-label">APIs routed behind The Glitch Store proxy key</div>
             </div>
-            <div class="metric-box">
+            <div class="metric-cell">
               <div class="metric-val">5</div>
-              <div class="metric-label">Segmented VLANs in the SUTech CET261 campus topology</div>
+              <div class="metric-label">Segmented VLANs in CET261 campus lab</div>
             </div>
-            <div class="metric-box">
+            <div class="metric-cell">
               <div class="metric-val">2029</div>
-              <div class="metric-label">Expected B.Tech graduation at SUTech Elsewedy University</div>
+              <div class="metric-label">Expected B.Tech graduation at SUTech</div>
             </div>
           </div>
 
-          <div class="dossier-email">
+          <div class="snapshot-contact">
             <div>
-              <div class="mono" style="font-size:0.68rem;color:var(--text-subtle)">DIRECT CONTACT</div>
-              <div class="dossier-email-addr">abdelrahman.m.magdy@gmail.com</div>
+              <div class="snapshot-email-label">Main email</div>
+              <div class="snapshot-email-addr">abdelrahman.m.magdy@gmail.com</div>
             </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;">
-              <button class="icon-btn" id="hero-copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="hero-copy-status">Copy</button>
-            </div>
+            <button class="icon-btn" id="hero-copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="hero-copy-status">Copy</button>
           </div>
-          <div class="copy-status" id="hero-copy-status" role="status" aria-live="polite" style="margin-top:0.45rem"></div>
+          <div class="copy-status" id="hero-copy-status" role="status" aria-live="polite" style="padding:0 1rem 0.55rem;background:var(--bg-alt);"></div>
         </aside>
       </div>
     </section>
 
-    <section class="section section-alt" id="focus">
-      <div class="wrap split-sticky">
-        <div class="sticky-rail">
-          <div class="kicker">01 // Focus</div>
-          <h2>What I build and break</h2>
-          <p class="section-desc">
-            Most early-stage bugs aren't exotic zero-days. They're missing RLS checks, trusted webhook bodies, race conditions on wallet balances, or fragile scripts that choke on dirty input. That's the layer I work on.
-          </p>
-          <div class="rail-note">
-            <strong>CURRENTLY OPEN FOR</strong>
-            Cybersecurity or SWE internships, fixed-scope SaaS security reviews (Next.js + Supabase), and freelance Python automation.
+    <section class="section section-alt" id="about">
+      <div class="wrap">
+        <div class="about-split">
+          <div class="about-copy">
+            <h2>About Me</h2>
+            <p>
+              I'm a B.Tech student in Computer Science Technology (Network &amp; Cyber Security) at Elsewedy University of Technology, graduating in 2029. Outside classes, I build full-stack web tools and audit early-stage SaaS apps.
+            </p>
+            <p>
+              Most real bugs I come across aren't exotic zero-days. They're missing Supabase RLS rules, credit balances checked before an upstream call instead of locked atomically, or proxy endpoints that follow redirects into localhost.
+            </p>
+            <p>
+              I don't hold commercial certificates yet, so everything I claim is backed by live deployments, Packet Tracer topologies, and sanitized audit reports you can read yourself.
+            </p>
+          </div>
+
+          <div class="panel about-graphic">
+            <pre class="terminal-code"><code><span class="term-key">$ whoami</span>
+<span class="term-val">Abdelrahman Hamida (@651Shadow)</span>
+
+<span class="term-key">$ cat focus.txt</span>
+- SaaS security reviews (Next.js / Supabase)
+- API marketplaces &amp; billing ledgers
+- Python scrapers, PDF ETL, price alerts
+- Cisco VLAN segmentation &amp; ACLs
+
+<span class="term-key">$ cat certs_todo.txt</span>
+[ ] CompTIA Security+ (SY0-701)
+[ ] Cisco CCST Cybersecurity / CCNA</code></pre>
           </div>
         </div>
 
-        <div class="stagger-grid">
-          <article class="panel panel-reticle focus-card">
-            <div class="card-meta">
-              <span class="badge badge-cyan">AppSec</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Auth · RLS · OWASP</span>
+        <h3 class="skills-heading" id="skills">Skills &amp; Technologies</h3>
+        <div class="skills-grid">
+          <div class="panel skill-card">
+            <h3>Security &amp; Networking</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">OWASP Top 10</span>
+              <span class="skill-pill">Supabase RLS</span>
+              <span class="skill-pill">SSRF / XSS</span>
+              <span class="skill-pill">Race conditions</span>
+              <span class="skill-pill">Cisco Packet Tracer</span>
+              <span class="skill-pill">VLANs / ACLs / NAT</span>
+              <span class="skill-pill">NetFlow / Syslog</span>
             </div>
-            <h3>SaaS security reviews</h3>
-            <p>Authorization-gated audits for live Next.js, React, and Supabase apps. I trace tenant isolation, SSRF paths, credit-ledger race conditions, and webhook verification, then hand over exact fixes.</p>
-          </article>
+          </div>
 
-          <article class="panel focus-card offset-col">
-            <div class="card-meta">
-              <span class="badge badge-purple">Full-Stack</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Next.js · NestJS · Supabase</span>
+          <div class="panel skill-card">
+            <h3>Full-Stack &amp; APIs</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">Next.js</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">NestJS</span>
+              <span class="skill-pill">Supabase</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">Tailwind CSS</span>
+              <span class="skill-pill">Vercel</span>
             </div>
-            <h3>Web apps and API proxies</h3>
-            <p>Full-stack products and serverless endpoints built with strict input schemas, atomic credit accounting, rate limits, and clean UIs that hold up under real traffic.</p>
-          </article>
+          </div>
 
-          <article class="panel focus-card">
-            <div class="card-meta">
-              <span class="badge badge-purple">Automation</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Python · Playwright · ETL</span>
+          <div class="panel skill-card">
+            <h3>Python &amp; Automation</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Playwright</span>
+              <span class="skill-pill">Selenium</span>
+              <span class="skill-pill">httpx / BS4</span>
+              <span class="skill-pill">Streamlit</span>
+              <span class="skill-pill">pypdf / openpyxl</span>
+              <span class="skill-pill">pytest</span>
+              <span class="skill-pill">Git &amp; CLI</span>
             </div>
-            <h3>Python scrapers and ETL</h3>
-            <p>Automation tools that clean messy B2B lead sheets, parse and rename PDF invoices, watch competitor pricing, and export formatted Excel workbooks.</p>
-          </article>
+          </div>
+        </div>
 
-          <article class="panel focus-card offset-col">
-            <div class="card-meta">
-              <span class="badge badge-cyan">Networking</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">VLANs · ACLs · Syslog</span>
+        <h3 class="skills-heading" id="experience">Experience &amp; Education</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="panel timeline-card">
+              <h3>Founder &amp; Full-Stack / Security Engineer</h3>
+              <div class="timeline-org">at The Glitch Store (theglitchstore.com)</div>
+              <p>Built and self-audited a live prepaid-credit API marketplace using Next.js, React, Supabase, and Tailwind CSS. Implemented Argon2id API key hashing, AES-256-GCM upstream credential encryption, SSRF proxy defenses, and atomic credit reservation.</p>
             </div>
-            <h3>Network segmentation</h3>
-            <p>Multi-VLAN campus topologies in Cisco Packet Tracer with isolated guest Wi-Fi, strict inter-VLAN ACL rules, NAT, NetFlow telemetry, and centralized logging.</p>
-          </article>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="panel timeline-card">
+              <h3>Freelance Security Reviewer &amp; Python Automation Developer</h3>
+              <div class="timeline-org">at Contra / Independent</div>
+              <p>Deliver fixed-scope SaaS Security &amp; Production-Readiness Reviews for Next.js and Supabase apps, plus Python automation scripts for B2B lead cleaning, PDF invoice parsing, and competitor price tracking.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2029</div>
+            <div class="panel timeline-card">
+              <h3>B.Tech, Computer Science Technology (Network &amp; Cyber Security)</h3>
+              <div class="timeline-org">at SUTech Elsewedy University (2025 to 2029 Expected) · Alexandria, Egypt</div>
+              <p>Coursework includes enterprise VLAN segmentation, inter-VLAN ACLs, NAT, NetFlow telemetry, Syslog servers, and defensive systems engineering.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -200,349 +240,279 @@
       <div class="wrap">
         <div class="projects-head">
           <div>
-            <div class="kicker">02 // Shipped Work</div>
-            <h2>Projects and audit proof</h2>
-            <p class="section-desc">Live products, open-source tools, redacted security reports, and university lab builds.</p>
+            <h2>My Projects</h2>
+            <p class="section-desc">Live systems, open-source APIs, redacted audit deliverables, and university network labs.</p>
           </div>
 
           <div class="filter-bar" role="group" aria-label="Filter projects by category">
             <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
             <button class="filter-btn" type="button" data-filter="security" aria-pressed="false">Security</button>
-            <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-Stack &amp; APIs</button>
+            <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-stack &amp; APIs</button>
             <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false">Automation</button>
             <span class="mono" id="project-count" style="font-size:12px;color:var(--text-subtle);margin-left:4px;">8 projects</span>
           </div>
         </div>
 
         <div class="spotlights">
-          <article class="panel panel-reticle spotlight-card project-card" data-categories="security,fullstack">
+          <article class="panel spotlight-card project-card" data-categories="security,fullstack">
             <div class="spotlight-copy">
-              <div class="card-meta">
-                <span class="badge badge-cyan">Flagship // Live</span>
-                <span class="mono" style="font-size:12px;color:var(--text-subtle)">API Marketplace</span>
-              </div>
               <h3>The Glitch Store</h3>
-              <p>A live prepaid-credit API marketplace I built and audited myself. Developers use one proxy key across 9+ utility APIs with pay-per-call billing instead of juggling separate accounts.</p>
-              <div class="tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">React</span>
-                <span class="tag">Supabase</span>
-                <span class="tag">Tailwind CSS</span>
-                <span class="tag">Argon2id</span>
+              <p>A live prepaid-credit API marketplace I built and audited myself. Developers use one proxy key across 9+ utility APIs with pay-per-call billing instead of juggling separate provider accounts.</p>
+              <div class="skill-pills" style="margin-top:0.85rem;">
+                <span class="skill-pill">Next.js</span>
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Supabase</span>
+                <span class="skill-pill">Argon2id</span>
               </div>
-              <div class="card-links">
-                <a href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">theglitchstore.com ↗</a>
-                <span class="muted-note">Private repo · Self-audited</span>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">View live site</a>
+                <span class="mono" style="font-size:0.74rem;color:var(--text-subtle);">Private repo / self-audited</span>
               </div>
             </div>
 
             <div class="spotlight-spec">
               <div class="spec-title">Security controls implemented</div>
               <ul class="spec-list">
-                <li>Argon2id API key hashing plus AES-256-GCM encryption for upstream keys</li>
-                <li>Atomic credit reservation before upstream calls so concurrent requests can't overdraw</li>
+                <li>Argon2id key hashing plus AES-256-GCM encryption for upstream credentials</li>
+                <li>Atomic credit reservation before upstream calls so concurrent bursts can't overdraw</li>
                 <li>DNS-checked SSRF proxy validation and private-IP blocking</li>
-                <li>Kill switches for checkout, proxy, and webhooks that fail closed</li>
+                <li>Fail-closed kill switches for checkout, proxy, webhooks, and email</li>
               </ul>
             </div>
           </article>
 
-          <article class="panel panel-reticle spotlight-card spotlight-reversed project-card" data-categories="security">
+          <article class="panel spotlight-card spotlight-reversed project-card" data-categories="security">
             <div class="spotlight-copy">
-              <div class="card-meta">
-                <span class="badge badge-purple">AppSec Deliverables</span>
-                <span class="mono" style="font-size:12px;color:var(--text-subtle)">Next.js + Supabase</span>
-              </div>
               <h3>SaaS Security Snapshot &amp; Review Samples</h3>
-              <p>Sanitized report samples pulled from real Next.js and Supabase AppSec reviews. Both repos strip client names and exploit steps while keeping the exact severity grading and code fixes.</p>
-              <div class="tags">
-                <span class="tag">OWASP</span>
-                <span class="tag">Supabase RLS</span>
-                <span class="tag">SSRF / XSS</span>
-                <span class="tag">PDF Report</span>
+              <p>Sanitized report samples pulled from real Next.js and Supabase AppSec reviews. Client names and exploit steps are stripped while keeping the exact severity grading and code fixes.</p>
+              <div class="skill-pills" style="margin-top:0.85rem;">
+                <span class="skill-pill">OWASP</span>
+                <span class="skill-pill">Supabase RLS</span>
+                <span class="skill-pill">SSRF / XSS</span>
+                <span class="skill-pill">PDF report</span>
               </div>
-              <div class="card-links">
-                <a href="https://github.com/651Shadow/saas-security-snapshot-sample" target="_blank" rel="noopener noreferrer">Snapshot Repo ↗</a>
-                <a href="https://github.com/651Shadow/security-review-sample" target="_blank" rel="noopener noreferrer">15-Finding Table ↗</a>
-                <a href="https://contra.com/s/lkecvYks-saa-s-security-snapshot?r=abdelrahman_hamida" target="_blank" rel="noopener noreferrer">Contra Service ↗</a>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://github.com/651Shadow/saas-security-snapshot-sample" target="_blank" rel="noopener noreferrer">View snapshot repo</a>
+                <a class="btn-outline-sm" href="https://github.com/651Shadow/security-review-sample" target="_blank" rel="noopener noreferrer">15-finding table</a>
+                <a class="btn-outline-sm" href="https://contra.com/s/lkecvYks-saa-s-security-snapshot?r=abdelrahman_hamida" target="_blank" rel="noopener noreferrer">Contra</a>
               </div>
             </div>
 
             <div class="spotlight-spec">
-              <div class="spec-title">Sample report breakdown (15 findings)</div>
-              <div class="severity-row">
-                <div class="sev-pill"><span class="sev-num">3</span><span class="sev-lbl">Critical</span></div>
-                <div class="sev-pill"><span class="sev-num">4</span><span class="sev-lbl">High</span></div>
-                <div class="sev-pill"><span class="sev-num">5</span><span class="sev-lbl">Medium</span></div>
-                <div class="sev-pill"><span class="sev-num">3</span><span class="sev-lbl">Low</span></div>
+              <div class="spec-title">Sample audit breakdown (15 findings)</div>
+              <div class="severity-table">
+                <div class="sev-cell"><span class="sev-num">3</span><span class="sev-lbl">Critical</span></div>
+                <div class="sev-cell"><span class="sev-num">4</span><span class="sev-lbl">High</span></div>
+                <div class="sev-cell"><span class="sev-num">5</span><span class="sev-lbl">Medium</span></div>
+                <div class="sev-cell"><span class="sev-num">3</span><span class="sev-lbl">Low</span></div>
               </div>
               <p style="font-size:0.78rem;color:var(--text-subtle);margin:0;">Top blockers fixed: privilege escalation via unrestricted RLS updates, balance tampering, and unindexed password-hash CPU loops.</p>
             </div>
           </article>
         </div>
 
-        <div class="bento-grid">
-          <article class="panel bento-card span-7 project-card" data-categories="security">
-            <div class="card-meta">
-              <span class="badge badge-cyan">Network Security</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">SUTech CET261</span>
+        <div class="projects-grid">
+          <article class="panel proj-card project-card" data-categories="security">
+            <div class="proj-banner">
+              <span class="proj-banner-tag">SUTech CET261</span>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 10v4M17 10v4"/></svg>
             </div>
-            <h3>University Department Network &amp; Secure VLANs</h3>
-            <p>Phase 1 topology and design rationale built in Cisco Packet Tracer 9.0.1. Segments Faculty, Students, Admin, Management, and Guest Wi-Fi into five VLANs with explicit inter-VLAN ACLs, NAT, NetFlow v9, and Syslog.</p>
-            <div class="tags">
-              <span class="tag">Cisco Packet Tracer</span>
-              <span class="tag">VLANs</span>
-              <span class="tag">ACLs &amp; NAT</span>
-              <span class="tag">NetFlow / Syslog</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/651Shadow/University-Department-Network-with-Guest-Wi-Fi-Secure-VLANs" target="_blank" rel="noopener noreferrer">Repository ↗</a>
-            </div>
-          </article>
-
-          <article class="panel bento-card span-5 project-card" data-categories="fullstack,security">
-            <div class="card-meta">
-              <span class="badge badge-purple">Serverless API</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">TypeScript · Vercel</span>
-            </div>
-            <h3>Web-to-Markdown API</h3>
-            <p>Converts public URLs or raw HTML into clean Markdown for LLM and RAG workflows. Blocks localhost, private networks, redirect chains to internal IPs, and oversized payloads.</p>
-            <div class="tags">
-              <span class="tag">TypeScript</span>
-              <span class="tag">Vercel</span>
-              <span class="tag">SSRF Defense</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/651Shadow/web-to-markdown-api" target="_blank" rel="noopener noreferrer">Repository ↗</a>
-              <a href="https://web-to-markdown-api.vercel.app" target="_blank" rel="noopener noreferrer">Live Endpoint ↗</a>
+            <div class="proj-body">
+              <h3>University Network &amp; Secure VLANs</h3>
+              <p>Phase 1 Cisco Packet Tracer 9.0.1 topology segmenting Faculty, Students, Admin, Management, and Guest Wi-Fi with inter-VLAN ACLs, NAT, NetFlow v9, and Syslog.</p>
+              <div class="skill-pills" style="margin-top:0.75rem;">
+                <span class="skill-pill">Packet Tracer</span>
+                <span class="skill-pill">VLANs</span>
+                <span class="skill-pill">ACLs</span>
+              </div>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://github.com/651Shadow/University-Department-Network-with-Guest-Wi-Fi-Secure-VLANs" target="_blank" rel="noopener noreferrer">View details</a>
+              </div>
             </div>
           </article>
 
-          <article class="panel bento-card span-5 project-card" data-categories="automation">
-            <div class="card-meta">
-              <span class="badge badge-purple">Automation Suite</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Python · Streamlit</span>
+          <article class="panel proj-card project-card" data-categories="fullstack,security">
+            <div class="proj-banner">
+              <span class="proj-banner-tag">Serverless API</span>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h14"/><path d="m17 15 3 3-3 3"/></svg>
             </div>
-            <h3>Python Automation &amp; Scraping Suite</h3>
-            <p>Interactive Streamlit demo built for freelance scraping and ops clients: deduplicates B2B leads, extracts PDF invoice fields into renamed ZIPs, and fires Slack/email payloads on price drops.</p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Streamlit</span>
-              <span class="tag">httpx / BS4</span>
-              <span class="tag">openpyxl</span>
-              <span class="tag">pytest</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
-              <span class="muted-note">Local client demo suite</span>
-            </div>
-          </article>
-
-          <article class="panel bento-card span-7 project-card" data-categories="fullstack">
-            <div class="card-meta">
-              <span class="badge">Static Web App</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">React 18 · Vite</span>
-            </div>
-            <h3>Glitch Labs</h3>
-            <p>Client-side digital storefront, interactive DevBox tool preview, and Markdown technical blog. Ships via GitHub Actions with zero monthly server bill and dual card/crypto checkout links.</p>
-            <div class="tags">
-              <span class="tag">React 18</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Vite</span>
-              <span class="tag">Marked</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/651Shadow/glitch-labs" target="_blank" rel="noopener noreferrer">Repository ↗</a>
-              <a href="https://651shadow.github.io/glitch-labs/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+            <div class="proj-body">
+              <h3>Web-to-Markdown API</h3>
+              <p>Converts public URLs or raw HTML into clean Markdown for LLM and RAG pipelines while blocking localhost, private networks, and internal redirect chains.</p>
+              <div class="skill-pills" style="margin-top:0.75rem;">
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">Vercel</span>
+                <span class="skill-pill">SSRF defense</span>
+              </div>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://github.com/651Shadow/web-to-markdown-api" target="_blank" rel="noopener noreferrer">View repo</a>
+                <a class="btn-outline-sm" href="https://web-to-markdown-api.vercel.app" target="_blank" rel="noopener noreferrer">Live</a>
+              </div>
             </div>
           </article>
 
-          <article class="panel bento-card span-7 project-card" data-categories="fullstack">
-            <div class="card-meta">
-              <span class="badge">Frontend Build</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Next.js 16 · WCAG 2.2 AA</span>
+          <article class="panel proj-card project-card" data-categories="automation">
+            <div class="proj-banner">
+              <span class="proj-banner-tag">Python / Streamlit</span>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
             </div>
-            <h3>Taza Produce</h3>
-            <p>Seven-route Next.js 16 and TypeScript marketing site for a Brooklyn halal grocery store. Built with accessible WCAG 2.2 AA contrast, dark/light tokens, AVIF/WebP media, and a rate-limited contact route.</p>
-            <div class="tags">
-              <span class="tag">Next.js 16</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Tailwind CSS</span>
-              <span class="tag">Vercel</span>
-            </div>
-            <div class="card-links">
-              <a href="https://github.com/651Shadow/taza-produce" target="_blank" rel="noopener noreferrer">Repository ↗</a>
-              <a href="https://taza-produce.vercel.app" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-              <a href="https://contra.com/p/R2PZrRqL-taza-produce-website" target="_blank" rel="noopener noreferrer">Contra Case ↗</a>
+            <div class="proj-body">
+              <h3>Automation &amp; Scraping Suite</h3>
+              <p>Streamlit demo built for freelance automation clients: cleans B2B leads, parses PDF invoices into renamed ZIPs, and formats Slack/email price-drop alerts.</p>
+              <div class="skill-pills" style="margin-top:0.75rem;">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Streamlit</span>
+                <span class="skill-pill">openpyxl</span>
+                <span class="skill-pill">pytest</span>
+              </div>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <span class="mono" style="font-size:0.7rem;color:var(--text-subtle);">Local suite</span>
+              </div>
             </div>
           </article>
 
-          <article class="panel bento-card span-5 project-card" data-categories="automation">
-            <div class="card-meta">
-              <span class="badge">Desktop Tool</span>
-              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Python · Tkinter</span>
+          <article class="panel proj-card project-card" data-categories="fullstack">
+            <div class="proj-banner">
+              <span class="proj-banner-tag">React 18 / Vite</span>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9l3 3-3 3M13 15h3"/></svg>
             </div>
-            <h3>Currency &amp; Unit Converter</h3>
-            <p>Python Tkinter desktop converter for currencies and units. Works offline with cached fallback rates and includes CLI verification plus automated tests.</p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Tkinter</span>
-              <span class="tag">CLI</span>
-              <span class="tag">Tests</span>
+            <div class="proj-body">
+              <h3>Glitch Labs</h3>
+              <p>Static developer storefront, interactive DevBox preview, and Markdown technical blog deployed via GitHub Actions with dual card and crypto checkout links.</p>
+              <div class="skill-pills" style="margin-top:0.75rem;">
+                <span class="skill-pill">React 18</span>
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">Vite</span>
+              </div>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://github.com/651Shadow/glitch-labs" target="_blank" rel="noopener noreferrer">View repo</a>
+                <a class="btn-outline-sm" href="https://651shadow.github.io/glitch-labs/" target="_blank" rel="noopener noreferrer">Demo</a>
+              </div>
             </div>
-            <div class="card-links">
-              <a href="https://github.com/651Shadow/Currency-Converter-Project" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+          </article>
+
+          <article class="panel proj-card project-card" data-categories="fullstack">
+            <div class="proj-banner">
+              <span class="proj-banner-tag">Next.js 16 / WCAG AA</span>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg>
+            </div>
+            <div class="proj-body">
+              <h3>Taza Produce</h3>
+              <p>Seven-route Next.js 16 and TypeScript marketing site built to WCAG 2.2 AA contrast standards with dark/light themes, AVIF/WebP media, and rate-limited forms.</p>
+              <div class="skill-pills" style="margin-top:0.75rem;">
+                <span class="skill-pill">Next.js 16</span>
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">Tailwind</span>
+              </div>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://github.com/651Shadow/taza-produce" target="_blank" rel="noopener noreferrer">View repo</a>
+                <a class="btn-outline-sm" href="https://taza-produce.vercel.app" target="_blank" rel="noopener noreferrer">Demo</a>
+                <a class="btn-outline-sm" href="https://contra.com/p/R2PZrRqL-taza-produce-website" target="_blank" rel="noopener noreferrer">Contra</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel proj-card project-card" data-categories="automation">
+            <div class="proj-banner">
+              <span class="proj-banner-tag">Python / Tkinter</span>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><path d="M7 10h10l-3-3M17 14H7l3 3"/></svg>
+            </div>
+            <div class="proj-body">
+              <h3>Currency &amp; Unit Converter</h3>
+              <p>Desktop Tkinter application for currency and unit conversions with offline cached fallback rates, CLI verification mode, and automated tests.</p>
+              <div class="skill-pills" style="margin-top:0.75rem;">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Tkinter</span>
+                <span class="skill-pill">CLI</span>
+              </div>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://github.com/651Shadow/Currency-Converter-Project" target="_blank" rel="noopener noreferrer">View details</a>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="education">
-      <div class="wrap edu-split">
-        <div class="edu-left">
-          <div class="kicker">03 // Background &amp; Stack</div>
-          <h2>Education and tools I reach for</h2>
-          <p class="section-desc">
-            I prefer small, verifiable systems over half-finished giant apps. Every tool below is one I've shipped real work with.
-          </p>
+    <section class="section section-alt" id="connect">
+      <div class="wrap">
+        <h2 style="margin-bottom:1.25rem;">Let's Work Together</h2>
+        <div class="connect-grid">
+          <div class="panel connect-form-card">
+            <h3>Send me a message</h3>
+            <form id="contact-form">
+              <div class="field-group">
+                <label class="field-label" for="msg-name">Name</label>
+                <input class="field-input" id="msg-name" type="text" placeholder="Your name">
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="msg-subject">Subject</label>
+                <input class="field-input" id="msg-subject" type="text" placeholder="Internship, security review, or build">
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="msg-body">Message</label>
+                <textarea class="field-textarea" id="msg-body" placeholder="Tell me what you're building or hiring for..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-square" type="submit" style="width:100%;">Open in email client</button>
+            </form>
 
-          <div class="panel panel-reticle edu-card">
-            <h3>Elsewedy University of Technology (SUTech)</h3>
-            <p class="edu-program">B.Tech, Computer Science Technology: Network &amp; Cyber Security Program</p>
-            <div class="edu-meta">
-              <span>2025 - 2029 (Expected)</span>
-              <span>·</span>
-              <span>Alexandria, Egypt</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="stack-right">
-          <div class="panel stack-row">
-            <div class="stack-row-head">
-              <h3>Security &amp; Networking</h3>
-              <span class="stack-row-sub">AppSec audits, threat modeling, VLANs</span>
-            </div>
-            <div class="stack-list">
-              <span class="tag">OWASP Top 10</span>
-              <span class="tag">Supabase RLS</span>
-              <span class="tag">SSRF / XSS</span>
-              <span class="tag">Race Conditions</span>
-              <span class="tag">HTTP Security Headers</span>
-              <span class="tag">Cisco Packet Tracer</span>
-              <span class="tag">VLANs / ACLs / NAT</span>
-              <span class="tag">NetFlow &amp; Syslog</span>
+            <div class="email-inline">
+              <div>
+                <div class="mono" style="font-size:0.74rem;color:var(--text-muted);">abdelrahman.m.magdy@gmail.com</div>
+                <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
+              </div>
+              <button class="icon-btn" id="copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="copy-status">Copy email</button>
             </div>
           </div>
 
-          <div class="panel stack-row">
-            <div class="stack-row-head">
-              <h3>Languages &amp; Web Stack</h3>
-              <span class="stack-row-sub">Frontend, APIs, auth, database ledgers</span>
+          <div class="connect-right-col">
+            <div class="panel connect-info-card">
+              <h3>Open to collaborations</h3>
+              <p>I'm currently open to student roles and fixed-scope engineering work where security and reliable delivery matter:</p>
+              <ul class="collab-list">
+                <li>Cybersecurity &amp; software engineering internships</li>
+                <li>Fixed-scope Next.js + Supabase security reviews</li>
+                <li>Full-stack web apps and API proxy backends</li>
+                <li>Python scraping, ETL, and workflow automation</li>
+              </ul>
             </div>
-            <div class="stack-list">
-              <span class="tag">Python</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Next.js</span>
-              <span class="tag">React</span>
-              <span class="tag">NestJS</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">Tailwind CSS</span>
-              <span class="tag">Vercel</span>
+
+            <div class="panel connect-socials-card">
+              <h3>My Socials</h3>
+              <div class="socials-row">
+                <a class="social-link-tile" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+                  <span class="social-tile-text">GitHub / 651Shadow</span>
+                </a>
+
+                <a class="social-link-tile" href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                  <span class="social-tile-text">LinkedIn / abdelrhman-hamida</span>
+                </a>
+
+                <a class="social-link-tile" href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  <span class="social-tile-text">X / @abdomhamida</span>
+                </a>
+
+                <a class="social-link-tile" href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg>
+                  <span class="social-tile-text">Contra / abdelrahman_hamida</span>
+                </a>
+
+                <a class="social-link-tile" href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 18 3 22 12 18 21 6 21 2 12 6 3"/><polyline points="10 8 15 12 10 16"/></svg>
+                  <span class="social-tile-text">Devpost / abdelrhman-dado123</span>
+                </a>
+
+                <a class="social-link-tile" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                  <span class="social-tile-text">theglitchstore.com</span>
+                </a>
+              </div>
             </div>
           </div>
-
-          <div class="panel stack-row">
-            <div class="stack-row-head">
-              <h3>Automation &amp; QA</h3>
-              <span class="stack-row-sub">Scrapers, PDF parsing, test suites</span>
-            </div>
-            <div class="stack-list">
-              <span class="tag">Playwright</span>
-              <span class="tag">Selenium</span>
-              <span class="tag">httpx / BeautifulSoup</span>
-              <span class="tag">Streamlit</span>
-              <span class="tag">pypdf / openpyxl</span>
-              <span class="tag">pytest</span>
-              <span class="tag">Git &amp; GitHub</span>
-              <span class="tag">Linux / CLI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="connect">
-      <div class="wrap connect-split">
-        <div class="connect-left">
-          <div class="kicker">04 // Connect</div>
-          <h2>Find me online</h2>
-          <p class="section-desc">
-            Looking for a cybersecurity or SWE intern, a fixed-price review on a Next.js/Supabase app, or a Python automation pipeline? Email is fastest.
-          </p>
-
-          <div class="panel panel-reticle email-box">
-            <div class="mono" style="font-size:0.72rem;color:var(--text-subtle)">MAIN EMAIL</div>
-            <div class="email-box-addr">abdelrahman.m.magdy@gmail.com</div>
-            <div class="email-actions">
-              <button class="btn btn-secondary" id="copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="copy-status">Copy Email</button>
-              <a class="btn btn-primary" href="mailto:abdelrahman.m.magdy@gmail.com">Send Email</a>
-            </div>
-            <div class="copy-status" id="copy-status" role="status" aria-live="polite" style="margin-top:0.5rem"></div>
-          </div>
-        </div>
-
-        <div class="connect-right">
-          <a class="panel connect-card" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="connect-name">GitHub</div>
-              <div class="connect-handle">github.com/651Shadow</div>
-            </div>
-            <span class="connect-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="panel connect-card" href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="connect-name">LinkedIn</div>
-              <div class="connect-handle">linkedin.com/in/abdelrhman-hamida</div>
-            </div>
-            <span class="connect-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="panel connect-card" href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="connect-name">X / Twitter</div>
-              <div class="connect-handle">x.com/abdomhamida</div>
-            </div>
-            <span class="connect-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="panel connect-card" href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="connect-name">Contra</div>
-              <div class="connect-handle">contra.com/abdelrahman_hamida</div>
-            </div>
-            <span class="connect-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="panel connect-card" href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="connect-name">Devpost</div>
-              <div class="connect-handle">devpost.com/abdelrhman-dado123</div>
-            </div>
-            <span class="connect-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="panel connect-card" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="connect-name">The Glitch Store</div>
-              <div class="connect-handle">theglitchstore.com</div>
-            </div>
-            <span class="connect-arrow" aria-hidden="true">↗</span>
-          </a>
         </div>
       </div>
     </section>
@@ -550,7 +520,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>© 2026 Abdelrahman Hamida (@651Shadow) · Alexandria, Egypt</span>
+      <span>© 2026 Abdelrahman Hamida (@651Shadow), Alexandria, Egypt</span>
       <div class="footer-links">
         <a href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

@@ -8,26 +8,26 @@
   const projectCount = document.getElementById("project-count");
   const copyBtns = Array.from(document.querySelectorAll("[data-copy-email]"));
   const copyStatus = document.getElementById("copy-status");
-  const heroCopyStatus = document.getElementById("hero-copy-status");
+  const contactForm = document.getElementById("contact-form");
 
   const savedTheme = localStorage.getItem("portfolio-theme");
   if (savedTheme === "light" || savedTheme === "dark") {
     root.setAttribute("data-theme", savedTheme);
   }
 
-  const syncThemeLabel = () => {
+  const syncThemeSwitch = () => {
     if (!themeBtn) return;
-    const isLight = root.getAttribute("data-theme") === "light";
-    themeBtn.textContent = isLight ? "Dark" : "Light";
-    themeBtn.setAttribute("aria-pressed", String(isLight));
+    const isDark = root.getAttribute("data-theme") !== "light";
+    themeBtn.setAttribute("aria-checked", String(isDark));
+    themeBtn.setAttribute("aria-label", isDark ? "Dark mode enabled, switch to light mode" : "Light mode enabled, switch to dark mode");
   };
-  syncThemeLabel();
+  syncThemeSwitch();
 
   themeBtn?.addEventListener("click", () => {
     const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
     root.setAttribute("data-theme", next);
     localStorage.setItem("portfolio-theme", next);
-    syncThemeLabel();
+    syncThemeSwitch();
   });
 
   navToggle?.addEventListener("click", () => {
@@ -85,12 +85,19 @@
         msg = email;
       }
       if (targetEl) targetEl.textContent = msg;
-      if (!targetId && heroCopyStatus && btn.id === "hero-copy-email") {
-        heroCopyStatus.textContent = msg;
-      }
       setTimeout(() => {
         if (targetEl) targetEl.textContent = "";
       }, 2500);
     });
+  });
+
+  contactForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("msg-name")?.value.trim() || "";
+    const subject = document.getElementById("msg-subject")?.value.trim() || "Portfolio inquiry";
+    const bodyText = document.getElementById("msg-body")?.value.trim() || "";
+    const fullBody = name ? `From: ${name}\n\n${bodyText}` : bodyText;
+    const mailtoUrl = `mailto:abdelrahman.m.magdy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullBody)}`;
+    window.location.href = mailtoUrl;
   });
 })();
