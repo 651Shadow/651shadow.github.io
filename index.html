@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'self'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Abdelrahman Hamida (@651Shadow) | Cybersecurity &amp; Full-Stack Engineer</title>
   <meta name="description" content="Personal portfolio of Abdelrahman Hamida (@651Shadow): Network and Cyber Security student at SUTech (Class of 2029), SaaS security reviewer, full-stack developer, and Python automation builder.">
@@ -40,10 +40,10 @@
 
         <button class="theme-switch" id="theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Dark mode enabled, switch to light mode">
           <span class="switch-icon" aria-hidden="true">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </span>
           <span class="switch-icon" aria-hidden="true">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg>
           </span>
           <span class="switch-thumb" aria-hidden="true"></span>
         </button>
@@ -57,13 +57,26 @@
     <section class="hero" id="top">
       <div class="wrap split-hero">
         <div class="hero-left">
-          <div class="avail-pill">Available for internships &amp; AppSec reviews</div>
+          <div class="status-object" role="region" aria-label="Current availability status">
+            <div class="status-cell">
+              <span class="status-k">STATUS</span>
+              <span class="status-v"><span class="status-led" aria-hidden="true"></span>ACTIVE // OPEN</span>
+            </div>
+            <div class="status-cell">
+              <span class="status-k">ENGAGEMENTS</span>
+              <span class="status-v">Internships &amp; AppSec Reviews</span>
+            </div>
+            <div class="status-cell">
+              <span class="status-k">LOCATION</span>
+              <span class="status-v">Alexandria, EG · Remote</span>
+            </div>
+          </div>
 
           <h1>Hey, I'm <span class="accent-name">Abdelrahman</span></h1>
           <div class="hero-role">Cybersecurity Student &amp; Full-Stack Engineer</div>
 
           <p class="hero-lede">
-            I study Network and Cyber Security at SUTech (Class of 2029) and build web apps, APIs, and Python automation scripts out of Alexandria, Egypt. Most days I'm focused on the layer where software breaks in production: auth boundaries, credit ledgers, and input validation.
+            I study Network and Cyber Security at SUTech (Class of 2029) and build web apps, APIs, and Python automation scripts out of Alexandria, Egypt. Most days I work on the layer where software breaks in production: auth boundaries, credit ledgers, and input validation.
           </p>
 
           <div class="cta-row">
@@ -71,43 +84,48 @@
             <a class="btn btn-secondary" href="#connect">Get in touch</a>
           </div>
 
-          <div class="social-strip" aria-label="Quick links">
+          <div class="social-strip" aria-label="Social platforms">
             <a class="social-chip" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">
-              <span class="chip-prefix">gh/</span><span>651Shadow</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span>GitHub</span>
             </a>
             <a class="social-chip" href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">
-              <span class="chip-prefix">in/</span><span>abdelrhman-hamida</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn</span>
             </a>
             <a class="social-chip" href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">
-              <span class="chip-prefix">x/</span><span>@abdomhamida</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span>X</span>
             </a>
             <a class="social-chip" href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">
-              <span class="chip-prefix">contra/</span><span>abdelrahman_hamida</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg>
+              <span>Contra</span>
             </a>
             <a class="social-chip" href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">
-              <span class="chip-prefix">devpost/</span><span>abdelrhman-dado123</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="6 3 18 3 22 12 18 21 6 21 2 12 6 3"/><polyline points="10 8 15 12 10 16"/></svg>
+              <span>Devpost</span>
             </a>
           </div>
         </div>
 
-        <aside class="hero-right panel snapshot-panel" aria-label="Profile snapshot">
+        <aside class="hero-right panel corner-brackets snapshot-panel" aria-label="Engineering telemetry and audit findings breakdown">
           <div class="snapshot-head">
-            <span>@651Shadow</span>
+            <span>Telemetry &amp; Audit Output</span>
             <span>Alexandria, EG</span>
           </div>
 
           <div class="metric-table">
             <div class="metric-cell">
               <div class="metric-val">15</div>
-              <div class="metric-label">Findings in redacted Next.js + Supabase audit sample</div>
+              <div class="metric-label">Findings in redacted Next.js + Supabase sample</div>
             </div>
             <div class="metric-cell">
               <div class="metric-val">9+</div>
-              <div class="metric-label">APIs routed behind The Glitch Store proxy key</div>
+              <div class="metric-label">Live utility APIs behind one proxy key</div>
             </div>
             <div class="metric-cell">
               <div class="metric-val">5</div>
-              <div class="metric-label">Segmented VLANs in CET261 campus lab</div>
+              <div class="metric-label">Segmented VLANs in CET261 topology</div>
             </div>
             <div class="metric-cell">
               <div class="metric-val">2029</div>
@@ -115,47 +133,186 @@
             </div>
           </div>
 
+          <div class="graph-block">
+            <div class="graph-head">
+              <span class="graph-title">Sample Audit Findings by Risk Surface</span>
+              <span class="graph-sub">15 total issues (security-review-sample)</span>
+            </div>
+            <div class="bar-chart">
+              <div class="bar-row">
+                <span class="bar-label">Proxy &amp; SSRF / Secret Exposure</span>
+                <div class="bar-track"><div class="bar-fill" style="width:88%;"></div></div>
+                <span class="bar-val">4 findings</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">Access Control &amp; RLS Policies</span>
+                <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+                <span class="bar-val">3 findings</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">Billing Ledgers &amp; Auth Flow</span>
+                <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+                <span class="bar-val">3 findings</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">Dependencies, Filters &amp; Errors</span>
+                <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+                <span class="bar-val">3 findings</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">Stored XSS &amp; Security Headers</span>
+                <div class="bar-track"><div class="bar-fill" style="width:48%;"></div></div>
+                <span class="bar-val">2 findings</span>
+              </div>
+            </div>
+          </div>
+
           <div class="snapshot-contact">
             <div>
-              <div class="snapshot-email-label">Main email</div>
+              <div class="snapshot-email-label">Direct email</div>
               <div class="snapshot-email-addr">abdelrahman.m.magdy@gmail.com</div>
             </div>
-            <button class="icon-btn" id="hero-copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="hero-copy-status">Copy</button>
+            <button class="icon-btn" id="hero-copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="hero-copy-status">Copy email</button>
           </div>
-          <div class="copy-status" id="hero-copy-status" role="status" aria-live="polite" style="padding:0 1rem 0.55rem;background:var(--bg-alt);"></div>
+          <div class="copy-status" id="hero-copy-status" role="status" aria-live="polite" style="padding:0 1.25rem 0.65rem;background:var(--bg-alt);"></div>
         </aside>
       </div>
     </section>
 
     <section class="section section-alt" id="about">
       <div class="wrap">
-        <div class="about-split">
-          <div class="about-copy">
-            <h2>About Me</h2>
-            <p>
-              I'm a B.Tech student in Computer Science Technology (Network &amp; Cyber Security) at Elsewedy University of Technology, graduating in 2029. Outside classes, I build full-stack web tools and audit early-stage SaaS apps.
-            </p>
-            <p>
-              Most real bugs I come across aren't exotic zero-days. They're missing Supabase RLS rules, credit balances checked before an upstream call instead of locked atomically, or proxy endpoints that follow redirects into localhost.
-            </p>
-            <p>
-              I don't hold commercial certificates yet, so everything I claim is backed by live deployments, Packet Tracer topologies, and sanitized audit reports you can read yourself.
-            </p>
+        <div class="about-layout">
+          <div class="about-left-col">
+            <div class="about-copy">
+              <h2>About Me</h2>
+              <p>
+                I'm a B.Tech student in Computer Science Technology (Network &amp; Cyber Security) at Elsewedy University of Technology, graduating in 2029. Outside classes, I build full-stack web tools and audit early-stage SaaS apps.
+              </p>
+              <p>
+                Most real bugs I come across aren't exotic zero-days. They're missing Supabase RLS rules, credit balances checked before an upstream call instead of locked atomically, or proxy endpoints that follow redirects into localhost.
+              </p>
+              <p>
+                I don't hold commercial certificates yet, so everything I claim is backed by live deployments, Packet Tracer topologies, and sanitized audit reports you can inspect right here.
+              </p>
+            </div>
+
+            <h3 class="skills-heading" id="experience">Experience &amp; Education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-year">2026</div>
+                <div class="panel timeline-card">
+                  <h3>Founder &amp; Full-Stack / Security Engineer</h3>
+                  <div class="timeline-org">The Glitch Store (theglitchstore.com)</div>
+                  <p>Built and self-audited a prepaid-credit API marketplace with Next.js, React, Supabase, and Tailwind CSS. Implemented Argon2id key hashing, AES-256-GCM credential encryption, SSRF proxy validation, and atomic credit ledgers.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-year">2026</div>
+                <div class="panel timeline-card">
+                  <h3>Freelance Security Reviewer &amp; Python Developer</h3>
+                  <div class="timeline-org">Contra / Independent</div>
+                  <p>Deliver fixed-scope SaaS Security &amp; Production-Readiness Reviews for Next.js and Supabase apps, plus Python automation scripts for B2B lead cleaning, PDF invoice parsing, and competitor price tracking.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-year">2029</div>
+                <div class="panel timeline-card">
+                  <h3>B.Tech, Computer Science Technology (Network &amp; Cyber Security)</h3>
+                  <div class="timeline-org">SUTech Elsewedy University (2025 to 2029 Expected) · Alexandria, Egypt</div>
+                  <p>Coursework includes enterprise VLAN segmentation, inter-VLAN ACLs, NAT, NetFlow telemetry, Syslog servers, and defensive systems engineering.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="panel about-graphic">
-            <pre class="terminal-code"><code><span class="term-key">$ whoami</span>
+          <div class="about-right-col">
+            <div class="panel corner-brackets" style="padding:1.25rem;">
+              <div class="graph-head">
+                <span class="graph-title">System &amp; Verification Matrix</span>
+                <span class="graph-sub">Verified public proof by domain</span>
+              </div>
+              <div class="matrix-wrap">
+                <table class="matrix-table">
+                  <thead>
+                    <tr>
+                      <th>Domain</th>
+                      <th>Primary Tools &amp; Stack</th>
+                      <th>Public Proof / Deliverable</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>SaaS AppSec Reviews</td>
+                      <td>OWASP, Supabase RLS, SSRF, Authz</td>
+                      <td>15-finding review sample + 3-page PDF snapshot</td>
+                    </tr>
+                    <tr>
+                      <td>API &amp; Web Systems</td>
+                      <td>Next.js, React, TypeScript, NestJS, Vercel</td>
+                      <td>The Glitch Store (9+ APIs) &amp; Web-to-Markdown API</td>
+                    </tr>
+                    <tr>
+                      <td>Network Security</td>
+                      <td>Cisco Packet Tracer, VLANs, ACLs, NAT, Syslog</td>
+                      <td>CET261 5-VLAN university network + NetFlow v9</td>
+                    </tr>
+                    <tr>
+                      <td>Python Automation</td>
+                      <td>Playwright, httpx, BeautifulSoup, pypdf, openpyxl</td>
+                      <td>Streamlit lead cleaner, PDF renamer &amp; price monitor</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel corner-brackets">
+              <div class="graph-block" style="border-bottom:none;">
+                <div class="graph-head">
+                  <span class="graph-title">Shipped Portfolio Focus Distribution</span>
+                  <span class="graph-sub">Across 8 documented systems</span>
+                </div>
+                <div class="bar-chart">
+                  <div class="bar-row">
+                    <span class="bar-label">AppSec &amp; Network Security</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:85%;"></div></div>
+                    <span class="bar-val">4 systems</span>
+                  </div>
+                  <div class="bar-row">
+                    <span class="bar-label">Full-Stack Web &amp; Serverless APIs</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:85%;"></div></div>
+                    <span class="bar-val">4 systems</span>
+                  </div>
+                  <div class="bar-row">
+                    <span class="bar-label">Python Automation &amp; Desktop Tools</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:52%;"></div></div>
+                    <span class="bar-val">2 systems</span>
+                  </div>
+                  <div class="bar-row">
+                    <span class="bar-label">Automated Test &amp; CI Verification</span>
+                    <div class="bar-track"><div class="bar-fill" style="width:75%;"></div></div>
+                    <span class="bar-val">pytest + tsc</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel corner-brackets" style="padding:1.25rem;">
+              <pre class="terminal-code"><code><span class="term-key">$ whoami</span>
 <span class="term-val">Abdelrahman Hamida (@651Shadow)</span>
 
-<span class="term-key">$ cat focus.txt</span>
+<span class="term-key">$ cat active_focus.txt</span>
 - SaaS security reviews (Next.js / Supabase)
-- API marketplaces &amp; billing ledgers
-- Python scrapers, PDF ETL, price alerts
-- Cisco VLAN segmentation &amp; ACLs
+- Prepaid API gateways &amp; atomic billing ledgers
+- Python scrapers, PDF ETL, price-drop alerts
+- Cisco VLAN segmentation &amp; ACL enforcement
 
 <span class="term-key">$ cat certs_todo.txt</span>
 [ ] CompTIA Security+ (SY0-701)
 [ ] Cisco CCST Cybersecurity / CCNA</code></pre>
+            </div>
           </div>
         </div>
 
@@ -203,36 +360,6 @@
             </div>
           </div>
         </div>
-
-        <h3 class="skills-heading" id="experience">Experience &amp; Education</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">2026</div>
-            <div class="panel timeline-card">
-              <h3>Founder &amp; Full-Stack / Security Engineer</h3>
-              <div class="timeline-org">at The Glitch Store (theglitchstore.com)</div>
-              <p>Built and self-audited a live prepaid-credit API marketplace using Next.js, React, Supabase, and Tailwind CSS. Implemented Argon2id API key hashing, AES-256-GCM upstream credential encryption, SSRF proxy defenses, and atomic credit reservation.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">2026</div>
-            <div class="panel timeline-card">
-              <h3>Freelance Security Reviewer &amp; Python Automation Developer</h3>
-              <div class="timeline-org">at Contra / Independent</div>
-              <p>Deliver fixed-scope SaaS Security &amp; Production-Readiness Reviews for Next.js and Supabase apps, plus Python automation scripts for B2B lead cleaning, PDF invoice parsing, and competitor price tracking.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">2029</div>
-            <div class="panel timeline-card">
-              <h3>B.Tech, Computer Science Technology (Network &amp; Cyber Security)</h3>
-              <div class="timeline-org">at SUTech Elsewedy University (2025 to 2029 Expected) · Alexandria, Egypt</div>
-              <p>Coursework includes enterprise VLAN segmentation, inter-VLAN ACLs, NAT, NetFlow telemetry, Syslog servers, and defensive systems engineering.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -241,7 +368,7 @@
         <div class="projects-head">
           <div>
             <h2>My Projects</h2>
-            <p class="section-desc">Live systems, open-source APIs, redacted audit deliverables, and university network labs.</p>
+            <p class="section-desc">Live systems, interactive landing page and PDF report previews, open-source APIs, and university network labs.</p>
           </div>
 
           <div class="filter-bar" role="group" aria-label="Filter projects by category">
@@ -249,43 +376,61 @@
             <button class="filter-btn" type="button" data-filter="security" aria-pressed="false">Security</button>
             <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-stack &amp; APIs</button>
             <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false">Automation</button>
-            <span class="mono" id="project-count" style="font-size:12px;color:var(--text-subtle);margin-left:4px;">8 projects</span>
+            <span class="mono" id="project-count" style="font-size:0.82rem;color:var(--text-subtle);margin-left:4px;">8 projects</span>
           </div>
         </div>
 
         <div class="spotlights">
-          <article class="panel spotlight-card project-card" data-categories="security,fullstack">
+          <article class="panel corner-brackets spotlight-card project-card" data-categories="security,fullstack">
             <div class="spotlight-copy">
               <h3>The Glitch Store</h3>
               <p>A live prepaid-credit API marketplace I built and audited myself. Developers use one proxy key across 9+ utility APIs with pay-per-call billing instead of juggling separate provider accounts.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
-                <span class="skill-pill">Next.js</span>
-                <span class="skill-pill">React</span>
-                <span class="skill-pill">Supabase</span>
-                <span class="skill-pill">Argon2id</span>
-              </div>
-              <div class="proj-actions">
-                <a class="btn btn-primary btn-card" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">View live site</a>
-                <span class="mono" style="font-size:0.74rem;color:var(--text-subtle);">Private repo / self-audited</span>
-              </div>
-            </div>
-
-            <div class="spotlight-spec">
-              <div class="spec-title">Security controls implemented</div>
               <ul class="spec-list">
                 <li>Argon2id key hashing plus AES-256-GCM encryption for upstream credentials</li>
                 <li>Atomic credit reservation before upstream calls so concurrent bursts can't overdraw</li>
                 <li>DNS-checked SSRF proxy validation and private-IP blocking</li>
                 <li>Fail-closed kill switches for checkout, proxy, webhooks, and email</li>
               </ul>
+              <div class="skill-pills" style="margin-top:1rem;">
+                <span class="skill-pill">Next.js</span>
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Supabase</span>
+                <span class="skill-pill">Argon2id</span>
+              </div>
+              <div class="proj-actions">
+                <a class="btn btn-primary btn-card" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">Open theglitchstore.com</a>
+                <span class="mono" style="font-size:0.78rem;color:var(--text-subtle);">Private repo / self-audited</span>
+              </div>
+            </div>
+
+            <div class="spotlight-preview">
+              <div class="iframe-bar">
+                <span>https://theglitchstore.com (Landing Page Preview)</span>
+                <div class="iframe-actions">
+                  <a class="btn-outline-sm" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">Open Live Tab</a>
+                </div>
+              </div>
+              <iframe class="project-iframe" src="/previews/theglitchstore.html" title="The Glitch Store Landing Page" loading="lazy"></iframe>
             </div>
           </article>
 
-          <article class="panel spotlight-card spotlight-reversed project-card" data-categories="security">
+          <article class="panel corner-brackets spotlight-card project-card" data-categories="security">
             <div class="spotlight-copy">
               <h3>SaaS Security Snapshot &amp; Review Samples</h3>
               <p>Sanitized report samples pulled from real Next.js and Supabase AppSec reviews. Client names and exploit steps are stripped while keeping the exact severity grading and code fixes.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
+
+              <div class="severity-table">
+                <div class="sev-cell"><span class="sev-num">3</span><span class="sev-lbl">Critical</span></div>
+                <div class="sev-cell"><span class="sev-num">4</span><span class="sev-lbl">High</span></div>
+                <div class="sev-cell"><span class="sev-num">5</span><span class="sev-lbl">Medium</span></div>
+                <div class="sev-cell"><span class="sev-num">3</span><span class="sev-lbl">Low</span></div>
+              </div>
+
+              <p style="margin-top:0.85rem;font-size:0.88rem;">
+                Covers privilege escalation via unrestricted RLS updates, balance tampering, unindexed password-hash CPU loops, SSRF, stored XSS, and missing CSP headers.
+              </p>
+
+              <div class="skill-pills" style="margin-top:1rem;">
                 <span class="skill-pill">OWASP</span>
                 <span class="skill-pill">Supabase RLS</span>
                 <span class="skill-pill">SSRF / XSS</span>
@@ -298,15 +443,15 @@
               </div>
             </div>
 
-            <div class="spotlight-spec">
-              <div class="spec-title">Sample audit breakdown (15 findings)</div>
-              <div class="severity-table">
-                <div class="sev-cell"><span class="sev-num">3</span><span class="sev-lbl">Critical</span></div>
-                <div class="sev-cell"><span class="sev-num">4</span><span class="sev-lbl">High</span></div>
-                <div class="sev-cell"><span class="sev-num">5</span><span class="sev-lbl">Medium</span></div>
-                <div class="sev-cell"><span class="sev-num">3</span><span class="sev-lbl">Low</span></div>
+            <div class="spotlight-preview">
+              <div class="iframe-bar">
+                <span>Security-Snapshot-Sample-Report.pdf (Detailed Report)</span>
+                <div class="iframe-actions">
+                  <button class="btn-outline-sm" id="toggle-raw-pdf" type="button" style="background:transparent;cursor:pointer;">Raw PDF</button>
+                  <a class="btn-outline-sm" href="/assets/docs/Security-Snapshot-Sample-Report.pdf" download>Download PDF</a>
+                </div>
               </div>
-              <p style="font-size:0.78rem;color:var(--text-subtle);margin:0;">Top blockers fixed: privilege escalation via unrestricted RLS updates, balance tampering, and unindexed password-hash CPU loops.</p>
+              <iframe class="project-iframe" id="pdf-report-iframe" src="/previews/security-snapshot-pdf.html" title="SaaS Security Snapshot Detailed Report PDF" loading="lazy"></iframe>
             </div>
           </article>
         </div>
@@ -315,12 +460,12 @@
           <article class="panel proj-card project-card" data-categories="security">
             <div class="proj-banner">
               <span class="proj-banner-tag">SUTech CET261</span>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 10v4M17 10v4"/></svg>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 10v4M17 10v4"/></svg>
             </div>
             <div class="proj-body">
               <h3>University Network &amp; Secure VLANs</h3>
               <p>Phase 1 Cisco Packet Tracer 9.0.1 topology segmenting Faculty, Students, Admin, Management, and Guest Wi-Fi with inter-VLAN ACLs, NAT, NetFlow v9, and Syslog.</p>
-              <div class="skill-pills" style="margin-top:0.75rem;">
+              <div class="skill-pills" style="margin-top:0.85rem;">
                 <span class="skill-pill">Packet Tracer</span>
                 <span class="skill-pill">VLANs</span>
                 <span class="skill-pill">ACLs</span>
@@ -334,12 +479,12 @@
           <article class="panel proj-card project-card" data-categories="fullstack,security">
             <div class="proj-banner">
               <span class="proj-banner-tag">Serverless API</span>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h14"/><path d="m17 15 3 3-3 3"/></svg>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h14"/><path d="m17 15 3 3-3 3"/></svg>
             </div>
             <div class="proj-body">
               <h3>Web-to-Markdown API</h3>
               <p>Converts public URLs or raw HTML into clean Markdown for LLM and RAG pipelines while blocking localhost, private networks, and internal redirect chains.</p>
-              <div class="skill-pills" style="margin-top:0.75rem;">
+              <div class="skill-pills" style="margin-top:0.85rem;">
                 <span class="skill-pill">TypeScript</span>
                 <span class="skill-pill">Vercel</span>
                 <span class="skill-pill">SSRF defense</span>
@@ -354,12 +499,12 @@
           <article class="panel proj-card project-card" data-categories="automation">
             <div class="proj-banner">
               <span class="proj-banner-tag">Python / Streamlit</span>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
             </div>
             <div class="proj-body">
               <h3>Automation &amp; Scraping Suite</h3>
               <p>Streamlit demo built for freelance automation clients: cleans B2B leads, parses PDF invoices into renamed ZIPs, and formats Slack/email price-drop alerts.</p>
-              <div class="skill-pills" style="margin-top:0.75rem;">
+              <div class="skill-pills" style="margin-top:0.85rem;">
                 <span class="skill-pill">Python</span>
                 <span class="skill-pill">Streamlit</span>
                 <span class="skill-pill">openpyxl</span>
@@ -367,7 +512,7 @@
               </div>
               <div class="proj-actions">
                 <a class="btn btn-primary btn-card" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <span class="mono" style="font-size:0.7rem;color:var(--text-subtle);">Local suite</span>
+                <span class="mono" style="font-size:0.74rem;color:var(--text-subtle);">Local suite</span>
               </div>
             </div>
           </article>
@@ -375,12 +520,12 @@
           <article class="panel proj-card project-card" data-categories="fullstack">
             <div class="proj-banner">
               <span class="proj-banner-tag">React 18 / Vite</span>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9l3 3-3 3M13 15h3"/></svg>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 9l3 3-3 3M13 15h3"/></svg>
             </div>
             <div class="proj-body">
               <h3>Glitch Labs</h3>
               <p>Static developer storefront, interactive DevBox preview, and Markdown technical blog deployed via GitHub Actions with dual card and crypto checkout links.</p>
-              <div class="skill-pills" style="margin-top:0.75rem;">
+              <div class="skill-pills" style="margin-top:0.85rem;">
                 <span class="skill-pill">React 18</span>
                 <span class="skill-pill">TypeScript</span>
                 <span class="skill-pill">Vite</span>
@@ -395,12 +540,12 @@
           <article class="panel proj-card project-card" data-categories="fullstack">
             <div class="proj-banner">
               <span class="proj-banner-tag">Next.js 16 / WCAG AA</span>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg>
             </div>
             <div class="proj-body">
               <h3>Taza Produce</h3>
               <p>Seven-route Next.js 16 and TypeScript marketing site built to WCAG 2.2 AA contrast standards with dark/light themes, AVIF/WebP media, and rate-limited forms.</p>
-              <div class="skill-pills" style="margin-top:0.75rem;">
+              <div class="skill-pills" style="margin-top:0.85rem;">
                 <span class="skill-pill">Next.js 16</span>
                 <span class="skill-pill">TypeScript</span>
                 <span class="skill-pill">Tailwind</span>
@@ -416,12 +561,12 @@
           <article class="panel proj-card project-card" data-categories="automation">
             <div class="proj-banner">
               <span class="proj-banner-tag">Python / Tkinter</span>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6"><path d="M7 10h10l-3-3M17 14H7l3 3"/></svg>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.6" aria-hidden="true"><path d="M7 10h10l-3-3M17 14H7l3 3"/></svg>
             </div>
             <div class="proj-body">
               <h3>Currency &amp; Unit Converter</h3>
               <p>Desktop Tkinter application for currency and unit conversions with offline cached fallback rates, CLI verification mode, and automated tests.</p>
-              <div class="skill-pills" style="margin-top:0.75rem;">
+              <div class="skill-pills" style="margin-top:0.85rem;">
                 <span class="skill-pill">Python</span>
                 <span class="skill-pill">Tkinter</span>
                 <span class="skill-pill">CLI</span>
@@ -437,29 +582,35 @@
 
     <section class="section section-alt" id="connect">
       <div class="wrap">
-        <h2 style="margin-bottom:1.25rem;">Let's Work Together</h2>
+        <h2 style="margin-bottom:1.5rem;">Let's Work Together</h2>
         <div class="connect-grid">
-          <div class="panel connect-form-card">
+          <div class="panel corner-brackets connect-form-card">
             <h3>Send me a message</h3>
             <form id="contact-form">
-              <div class="field-group">
-                <label class="field-label" for="msg-name">Name</label>
-                <input class="field-input" id="msg-name" type="text" placeholder="Your name">
+              <div class="form-row-2">
+                <div class="field-group">
+                  <label class="field-label" for="msg-name">Name</label>
+                  <input class="field-input" id="msg-name" type="text" placeholder="Your name">
+                </div>
+                <div class="field-group">
+                  <label class="field-label" for="msg-email">Your Email</label>
+                  <input class="field-input" id="msg-email" type="email" placeholder="you@company.com">
+                </div>
               </div>
               <div class="field-group">
-                <label class="field-label" for="msg-subject">Subject</label>
-                <input class="field-input" id="msg-subject" type="text" placeholder="Internship, security review, or build">
+                <label class="field-label" for="msg-subject">Subject / Project Type</label>
+                <input class="field-input" id="msg-subject" type="text" placeholder="Internship, SaaS security review, API build, or automation">
               </div>
               <div class="field-group">
                 <label class="field-label" for="msg-body">Message</label>
-                <textarea class="field-textarea" id="msg-body" placeholder="Tell me what you're building or hiring for..."></textarea>
+                <textarea class="field-textarea" id="msg-body" placeholder="Tell me what you're building, scope, or role details..."></textarea>
               </div>
-              <button class="btn btn-primary btn-square" type="submit" style="width:100%;">Open in email client</button>
+              <button class="btn btn-primary" type="submit" style="width:100%;">Open in email client</button>
             </form>
 
             <div class="email-inline">
               <div>
-                <div class="mono" style="font-size:0.74rem;color:var(--text-muted);">abdelrahman.m.magdy@gmail.com</div>
+                <div class="mono" style="font-size:0.84rem;color:var(--text);">abdelrahman.m.magdy@gmail.com</div>
                 <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
               </div>
               <button class="icon-btn" id="copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="copy-status">Copy email</button>
@@ -469,7 +620,7 @@
           <div class="connect-right-col">
             <div class="panel connect-info-card">
               <h3>Open to collaborations</h3>
-              <p>I'm currently open to student roles and fixed-scope engineering work where security and reliable delivery matter:</p>
+              <p>I'm open to student roles and fixed-scope engineering work where security and reliable delivery matter:</p>
               <ul class="collab-list">
                 <li>Cybersecurity &amp; software engineering internships</li>
                 <li>Fixed-scope Next.js + Supabase security reviews</li>
@@ -482,33 +633,33 @@
               <h3>My Socials</h3>
               <div class="socials-row">
                 <a class="social-link-tile" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-                  <span class="social-tile-text">GitHub / 651Shadow</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+                  <span>GitHub</span>
                 </a>
 
                 <a class="social-link-tile" href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                  <span class="social-tile-text">LinkedIn / abdelrhman-hamida</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                  <span>LinkedIn</span>
                 </a>
 
                 <a class="social-link-tile" href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                  <span class="social-tile-text">X / @abdomhamida</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  <span>X</span>
                 </a>
 
                 <a class="social-link-tile" href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg>
-                  <span class="social-tile-text">Contra / abdelrahman_hamida</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg>
+                  <span>Contra</span>
                 </a>
 
                 <a class="social-link-tile" href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 18 3 22 12 18 21 6 21 2 12 6 3"/><polyline points="10 8 15 12 10 16"/></svg>
-                  <span class="social-tile-text">Devpost / abdelrhman-dado123</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="6 3 18 3 22 12 18 21 6 21 2 12 6 3"/><polyline points="10 8 15 12 10 16"/></svg>
+                  <span>Devpost</span>
                 </a>
 
                 <a class="social-link-tile" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-                  <span class="social-tile-text">theglitchstore.com</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M9 21V9"/></svg>
+                  <span>The Glitch Store</span>
                 </a>
               </div>
             </div>
@@ -520,7 +671,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>© 2026 Abdelrahman Hamida (@651Shadow), Alexandria, Egypt</span>
+      <span>© 2026 Abdelrahman Hamida, Alexandria, Egypt</span>
       <div class="footer-links">
         <a href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'self'">
+  <title>The Glitch Store Preview</title>
+  <style>
+    :root {
+      --bg: #07090d;
+      --panel: #0d1118;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    a { color: inherit; text-decoration: none; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7, 9, 13, 0.92);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
+    nav a:hover { color: var(--accent); }
+    .container { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 16px;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 2px 8px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+    h1 {
+      margin: 10px 0 8px;
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+    .price-bar {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      background: var(--bg);
+      color: var(--accent);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .muted { color: var(--muted); margin: 0 0 12px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .btn {
+      padding: 7px 12px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 12px;
+    }
+    .btn-fill { background: var(--accent); color: #05130a; font-weight: 700; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .stat {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 8px 10px;
+    }
+    .stat-title { font-weight: 600; font-size: 12px; }
+    .stat-sub { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .api-card {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 12px;
+      display: block;
+    }
+    .api-card:hover { border-color: var(--accent); }
+    .api-card h3 { margin: 6px 0 4px; font-size: 14px; }
+    .arch-box {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 12px;
+    }
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .tier {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 10px;
+    }
+    .tier-active { border-color: var(--accent); }
+    .tier-price { font-size: 18px; font-weight: 700; margin: 4px 0; }
+    .cli-box {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    @media (max-width: 520px) {
+      .grid-2, .pricing { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mono">
+    <span>[root@glitch-store] ~</span>
+    <nav>
+      <a href="https://theglitchstore.com/" target="_blank" rel="noopener noreferrer">Home</a>
+      <a href="https://theglitchstore.com/marketplace" target="_blank" rel="noopener noreferrer">Marketplace</a>
+      <a href="https://theglitchstore.com/playground" target="_blank" rel="noopener noreferrer">Playground</a>
+      <a href="https://theglitchstore.com/signup" target="_blank" rel="noopener noreferrer">Get started</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span class="mono" style="font-size:11px;color:var(--muted);letter-spacing:0.15em;">THE GLITCH STORE</span>
+        <span class="tag mono">AGENT-NATIVE</span>
+      </div>
+      <h1 class="mono">Turn any URL into clean Markdown for AI agents.</h1>
+      <div class="price-bar mono">
+        <span>$5 for 500 pages. Never expires.</span>
+        <span style="color:var(--text);">No subscription.</span>
+      </div>
+      <p class="muted">One account, one API key, and prepaid credits for the current API catalog.</p>
+      <div class="btn-row mono">
+        <a class="btn btn-fill" href="https://theglitchstore.com/marketplace" target="_blank" rel="noopener noreferrer">&gt; browse marketplace</a>
+        <a class="btn" href="https://theglitchstore.com/signup" target="_blank" rel="noopener noreferrer">&gt; start free (50 credits)</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-title mono">Status page</div><div class="stat-sub">Service updates</div></div>
+        <div class="stat"><div class="stat-title mono">Request logs</div><div class="stat-sub">Usage</div></div>
+        <div class="stat"><div class="stat-title mono">Explore catalog</div><div class="stat-sub">9+ live APIs</div></div>
+        <div class="stat"><div class="stat-title mono">Pay-per-call</div><div class="stat-sub">Credit billing</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="mono" style="font-size:11px;color:var(--muted);letter-spacing:0.12em;margin-bottom:8px;">FEATURED APIS</div>
+      <div class="grid-2">
+        <a class="api-card" href="https://theglitchstore.com/playground?api=web-extract" target="_blank" rel="noopener noreferrer">
+          <div class="mono" style="font-size:10px;color:var(--muted);">1 CREDIT / CALL</div>
+          <h3 class="mono">Web Extract</h3>
+          <p class="muted" style="margin-bottom:6px;">Extract readable text, headings, and links from public HTML pages.</p>
+          <span class="mono" style="color:var(--accent);font-size:11px;">&gt; test in playground</span>
+        </a>
+        <a class="api-card" href="https://theglitchstore.com/playground?api=web-to-markdown" target="_blank" rel="noopener noreferrer">
+          <div class="mono" style="font-size:10px;color:var(--muted);">1 CREDIT / CALL</div>
+          <h3 class="mono">Web to Markdown</h3>
+          <p class="muted" style="margin-bottom:6px;">Convert live pages into clean Markdown for scraping and agent flows.</p>
+          <span class="mono" style="color:var(--accent);font-size:11px;">&gt; test in playground</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="mono" style="font-size:11px;color:var(--muted);letter-spacing:0.12em;margin-bottom:8px;">ARCHITECTURE: PROXY ROUTING</div>
+      <div class="arch-box">
+        <svg viewBox="0 0 460 120" width="100%" height="auto" aria-label="Proxy routing architecture">
+          <rect x="6" y="28" width="90" height="58" fill="#07090d" stroke="#334155"/>
+          <rect x="126" y="10" width="98" height="44" fill="#07090d" stroke="#22c55e"/>
+          <rect x="126" y="66" width="98" height="44" fill="#07090d" stroke="#334155"/>
+          <rect x="256" y="34" width="90" height="52" fill="#07090d" stroke="#334155"/>
+          <rect x="366" y="34" width="88" height="52" fill="#07090d" stroke="#22c55e"/>
+          <path d="M96 50 L126 32 M96 62 L126 88 M224 32 L256 54 M224 88 L256 66 M346 60 L366 60" stroke="#22c55e" stroke-width="2"/>
+          <text x="51" y="61" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="monospace">USER</text>
+          <text x="175" y="36" text-anchor="middle" fill="#22c55e" font-size="10" font-family="monospace">GATEWAY</text>
+          <text x="175" y="92" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="monospace">POLICY</text>
+          <text x="301" y="64" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="monospace">RELAY</text>
+          <text x="410" y="64" text-anchor="middle" fill="#22c55e" font-size="10" font-family="monospace">TARGET</text>
+        </svg>
+      </div>
+      <div class="cli-box mono" style="margin-top:10px;">
+        &gt; endpoint: https://theglitchstore.com/api/secure-proxy<br>
+        &gt; header: x-api-key: gstore_********<br>
+        &gt; api: web-to-markdown
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="mono" style="font-size:11px;color:var(--muted);letter-spacing:0.12em;margin-bottom:8px;">CREDIT-BASED PRICING</div>
+      <div class="pricing">
+        <div class="tier">
+          <div class="mono" style="font-size:10px;color:var(--muted);">START_FREE</div>
+          <div class="tier-price mono">$0</div>
+          <div style="font-size:11px;color:var(--muted);">Account setup + playground access</div>
+        </div>
+        <div class="tier tier-active">
+          <div class="mono" style="font-size:10px;color:var(--accent);">CREDIT_PACK</div>
+          <div class="tier-price mono">$5.00</div>
+          <div style="font-size:11px;color:var(--muted);">500 markdown pages, never expires</div>
+        </div>
+        <div class="tier">
+          <div class="mono" style="font-size:10px;color:var(--muted);">CUSTOM</div>
+          <div class="tier-price mono">Custom</div>
+          <div style="font-size:11px;color:var(--muted);">Scoped endpoints &amp; integrations</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

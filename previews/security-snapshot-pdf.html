@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'self'">
+  <title>SaaS Security Snapshot Detailed Report</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 14px;
+      background: #141122;
+      color: #111827;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: -14px -14px 14px;
+      padding: 8px 14px;
+      background: #0d0a18;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.35);
+      color: #e5e7eb;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+    }
+    .toolbar a {
+      color: #c4b5fd;
+      text-decoration: none;
+      border: 1px solid rgba(139, 92, 246, 0.45);
+      padding: 3px 8px;
+    }
+    .toolbar a:hover { background: rgba(139, 92, 246, 0.18); }
+    .sheet {
+      max-width: 760px;
+      margin: 0 auto 16px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 22px 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    .kicker {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #6d28d9;
+      margin-bottom: 4px;
+    }
+    h1 { margin: 0 0 4px; font-size: 20px; color: #0f172a; }
+    h2 { margin: 16px 0 8px; font-size: 15px; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+    .sub { margin: 0 0 14px; color: #475569; font-size: 13px; }
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      margin-bottom: 14px;
+    }
+    .scope-cell { padding: 10px 12px; border: 1px solid #e2e8f0; }
+    .scope-cell strong { display: block; font-size: 11px; color: #1e293b; margin-bottom: 2px; }
+    .boundary {
+      border-left: 3px solid #7c3aed;
+      background: #f5f3ff;
+      padding: 10px 12px;
+      margin: 10px 0 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-top: 8px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #1e1b4b; color: #ffffff; font-weight: 600; }
+    tr:nth-child(even) td { background: #f8fafc; }
+    .sev {
+      font-family: ui-monospace, monospace;
+      font-weight: 700;
+      font-size: 10.5px;
+      white-space: nowrap;
+    }
+    .sev-crit { color: #b91c1c; }
+    .sev-high { color: #c2410c; }
+    .sev-med { color: #a16207; }
+    .sev-low { color: #334155; }
+    .finding-box {
+      border: 1px solid #fecaca;
+      background: #fef2f2;
+      padding: 12px;
+      margin: 10px 0;
+    }
+    .sheet-foot {
+      margin-top: 14px;
+      padding-top: 8px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: #64748b;
+    }
+    @media (max-width: 560px) {
+      .scope-grid { grid-template-columns: 1fr; }
+      .sheet { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span>Security-Snapshot-Sample-Report.pdf (3 Pages + 15 Findings)</span>
+    <div style="display:flex;gap:8px;">
+      <a href="/assets/docs/Security-Snapshot-Sample-Report.pdf" target="_blank" rel="noopener noreferrer">Open Raw PDF</a>
+      <a href="/assets/docs/Security-Snapshot-Sample-Report.pdf" download>Download PDF</a>
+    </div>
+  </div>
+
+  <article class="sheet">
+    <div class="kicker">SAMPLE DELIVERABLE</div>
+    <h1>SaaS Security Snapshot</h1>
+    <p class="sub">Application-security and production-readiness review for a live Next.js + Supabase app.</p>
+
+    <div class="scope-grid">
+      <div class="scope-cell"><strong>Scope</strong>Public web and API review, auth boundaries, sensitive flows, and deployment-readiness checks.</div>
+      <div class="scope-cell"><strong>Format</strong>Prioritized findings, practical remediation, and an executive summary for founders.</div>
+      <div class="scope-cell"><strong>Typical timing</strong>One week after written authorization and target scope confirmation.</div>
+      <div class="scope-cell"><strong>Price</strong>$150 fixed for the initial snapshot. Implementation work scoped separately.</div>
+    </div>
+
+    <h2>What this sample represents</h2>
+    <p>This is a sanitized example based on application-security and remediation work completed on a production Next.js App Router and Supabase marketplace. Names, file paths, and exploit steps are redacted.</p>
+
+    <div class="boundary">
+      <strong>Testing boundary:</strong> Only systems the client owns or explicitly authorizes are assessed. No load testing, social engineering, credential collection, or destructive testing.
+    </div>
+
+    <div class="sheet-foot">
+      <span>Prepared by Abdelrahman Hamida</span>
+      <span>Sample report | Page 1 of 3</span>
+    </div>
+  </article>
+
+  <article class="sheet">
+    <h2>Detailed Findings Ledger (3 Critical, 4 High, 5 Medium, 3 Low)</h2>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Severity</th><th>Finding</th><th>Remediation Fix</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>F-01</td><td class="sev sev-crit">Critical</td><td>Users can promote themselves to admin via unrestricted update policy</td><td>Restrict column-level update privileges; make admin checks fail closed</td></tr>
+        <tr><td>F-02</td><td class="sev sev-crit">Critical</td><td>Any signed-in user can raise their own credit balance</td><td>Revoke client updates on balance; change balances only via server ledger</td></tr>
+        <tr><td>F-03</td><td class="sev sev-crit">Critical</td><td>Slow password-hash check runs in a loop on guest requests (CPU exhaustion)</td><td>Add an indexed lookup prefix so hash verifies at most once per request</td></tr>
+        <tr><td>F-04</td><td class="sev sev-high">High</td><td>Proxy endpoints can reach internal addresses and follow redirects (SSRF)</td><td>Block private/metadata IPs after DNS resolution; disable auto-redirects</td></tr>
+        <tr><td>F-05</td><td class="sev sev-high">High</td><td>Public API responses expose encrypted upstream credentials and hostnames</td><td>Revoke public read on secret columns; return catalog fields only</td></tr>
+        <tr><td>F-06</td><td class="sev sev-high">High</td><td>Balance checked before upstream call and charged after (race condition)</td><td>Reserve credits atomically before calling upstream; refund on failure</td></tr>
+        <tr><td>F-07</td><td class="sev sev-high">High</td><td>Unescaped JSON-LD structured-data script tag allows stored XSS</td><td>Escape the less-than character when serializing JSON for script tags</td></tr>
+        <tr><td>F-08</td><td class="sev sev-med">Medium</td><td>40 known dependency vulnerabilities including 1 critical</td><td>Upgrade framework and transitive packages in one maintenance change</td></tr>
+        <tr><td>F-09</td><td class="sev sev-med">Medium</td><td>Search filters accept unvalidated input causing crashes and injection</td><td>Validate field identifiers and strip filter delimiters</td></tr>
+        <tr><td>F-10</td><td class="sev sev-med">Medium</td><td>Missing HTTP security headers (CSP, HSTS, frame and content-type)</td><td>Add baseline header set in framework configuration</td></tr>
+        <tr><td>F-11</td><td class="sev sev-med">Medium</td><td>Raw database error text returned in server error responses</td><td>Log details internally with correlation ID and return generic message</td></tr>
+        <tr><td>F-12</td><td class="sev sev-med">Medium</td><td>Error monitoring captures auth headers and tokens</td><td>Add scrubbing hook stripping sensitive authorization headers</td></tr>
+        <tr><td>F-13</td><td class="sev sev-low">Low</td><td>User-supplied names inserted unescaped into HTML emails</td><td>HTML-escape template variables before rendering</td></tr>
+        <tr><td>F-14</td><td class="sev sev-low">Low</td><td>Missing auth session-refresh middleware causing unexpected drops</td><td>Add standard cookie session-refresh middleware</td></tr>
+        <tr><td>F-15</td><td class="sev sev-low">Low</td><td>Unsubscribe link mutates data on GET (triggered by email scanners)</td><td>Confirm on GET and perform mutation on POST</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sheet-foot">
+      <span>Abdelrahman Hamida | SaaS Security Snapshot</span>
+      <span>Sample report | Page 2 of 3</span>
+    </div>
+  </article>
+
+  <article class="sheet">
+    <h2>Finding Format Walkthrough: Server-Side Request Validation</h2>
+    <div class="finding-box">
+      <p style="margin:0 0 6px;"><strong>Severity:</strong> High &nbsp;|&nbsp; <strong>Affected area:</strong> Server-side integration proxy</p>
+      <p style="margin:0 0 6px;"><strong>Risk:</strong> An attacker can make the server reach internal metadata or private network targets when requested URLs are not validated.</p>
+      <p style="margin:0 0 6px;"><strong>Safe reproduction:</strong> Confirm whether routes reject non-HTTP schemes, local/private IP ranges, cloud metadata hosts, embedded credentials, DNS rebinding, and redirects.</p>
+      <p style="margin:0;"><strong>Recommended remediation:</strong> Validate every outbound URL prior to fetch, resolve and inspect destination IPs, block private ranges, disable redirects, and add regression tests.</p>
+    </div>
+
+    <h2>Controls Verified Working</h2>
+    <ul style="margin:6px 0 0;padding-left:18px;">
+      <li>Kill switches for checkout, proxy, webhooks, and email that fail closed.</li>
+      <li>Payment status verified directly with provider rather than trusting webhook body.</li>
+      <li>API keys hashed with Argon2id; upstream credentials encrypted with AES-256-GCM.</li>
+      <li>Constant-time signature comparisons and zero secrets committed to Git history.</li>
+    </ul>
+
+    <div class="sheet-foot">
+      <span>Service: contra.com/s/lkecvYks-saa-s-security-snapshot</span>
+      <span>Sample report | Page 3 of 3</span>
+    </div>
+  </article>
+</body>
+</html>

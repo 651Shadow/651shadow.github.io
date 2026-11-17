@@ -9,6 +9,8 @@
   const copyBtns = Array.from(document.querySelectorAll("[data-copy-email]"));
   const copyStatus = document.getElementById("copy-status");
   const contactForm = document.getElementById("contact-form");
+  const togglePdfBtn = document.getElementById("toggle-raw-pdf");
+  const pdfIframe = document.getElementById("pdf-report-iframe");
 
   const savedTheme = localStorage.getItem("portfolio-theme");
   if (savedTheme === "light" || savedTheme === "dark") {
@@ -94,10 +96,25 @@
   contactForm?.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = document.getElementById("msg-name")?.value.trim() || "";
+    const replyEmail = document.getElementById("msg-email")?.value.trim() || "";
     const subject = document.getElementById("msg-subject")?.value.trim() || "Portfolio inquiry";
     const bodyText = document.getElementById("msg-body")?.value.trim() || "";
-    const fullBody = name ? `From: ${name}\n\n${bodyText}` : bodyText;
+    const meta = [name ? `From: ${name}` : "", replyEmail ? `Reply-To: ${replyEmail}` : ""].filter(Boolean).join("\n");
+    const fullBody = meta ? `${meta}\n\n${bodyText}` : bodyText;
     const mailtoUrl = `mailto:abdelrahman.m.magdy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullBody)}`;
     window.location.href = mailtoUrl;
+  });
+
+  togglePdfBtn?.addEventListener("click", () => {
+    if (!pdfIframe) return;
+    const current = pdfIframe.getAttribute("src") || "";
+    const showingRaw = current.endsWith(".pdf");
+    if (showingRaw) {
+      pdfIframe.setAttribute("src", "/previews/security-snapshot-pdf.html");
+      togglePdfBtn.textContent = "Raw PDF";
+    } else {
+      pdfIframe.setAttribute("src", "/assets/docs/Security-Snapshot-Sample-Report.pdf");
+      togglePdfBtn.textContent = "Interactive View";
+    }
   });
 })();
