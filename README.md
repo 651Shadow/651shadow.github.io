@@ -1,18 +1,15 @@
-# Strata
+# Abdelrahman Hamida (@651Shadow)
 
-Free AI tools, prompt packs, and done-for-you AI systems.
+Personal portfolio &amp; links hub hosted on GitHub Pages: **https://651shadow.github.io**
 
-**Live site:** https://651shadow.github.io
-
-Strata is a public collection of privacy-first AI tools that run entirely in your browser — no signup, no uploads, no tracking. Plus battle-tested prompt packs and custom AI builds.
-
-## What's inside
-- Free client-side tools: text rewriter, summarizer, prompt builder, hashtag generator, tone checker, idea generator, SQL explainer, JSON formatter, build estimator
-- Prompt packs (paid, lifetime): Starter $9, Automation Kit $19, Full System Bundle $39
-- Custom builds: AI agents, automation, RAG systems, web apps
-
-## Built by
-Strata is run by Shadow (Abdelrahman). Live portfolio proof: [The Glitch Store](https://theglitchstore.com) — a security-audited API marketplace.
+## Links
+- **GitHub:** https://github.com/651Shadow
+- **LinkedIn:** https://www.linkedin.com/in/abdelrhman-hamida/
+- **X / Twitter:** https://x.com/abdomhamida
+- **Contra:** https://contra.com/abdelrahman_hamida
+- **Devpost:** https://devpost.com/abdelrhman-dado123
+- **Live Flagship:** https://theglitchstore.com
+- **Email:** abdelrhman.dado123@gmail.com
 
 ## Stack
-Static HTML + CSS, zero build step, zero monthly cost. Deploys to GitHub Pages.
+Static HTML5, CSS3, and vanilla JavaScript (`script-src 'self'` strict Content-Security-Policy, zero tracking, zero build step).

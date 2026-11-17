@@ -1,206 +1,487 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self' https://formspree.io https://*.formspree.io; base-uri 'self'">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Strata — Free AI tools, prompt packs & done-for-you AI systems</title>
-<meta name="description" content="Strata is a public collection of free, privacy-first AI tools and battle-tested prompt packs — plus done-for-you AI automation and web systems built by engineers, not generalists.">
-<meta name="keywords" content="free AI tools, prompt packs, AI automation, WhatsApp bot, RAG, web app, AI agents, no signup AI">
-<meta property="og:title" content="Strata — Free AI tools & done-for-you AI systems">
-<meta property="og:description" content="Privacy-first AI tools that run in your browser, plus prompt packs and custom AI builds.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Abdelrahman Hamida (@651Shadow) — Cybersecurity &amp; Full-Stack Engineer</title>
+  <meta name="description" content="Personal portfolio of Abdelrahman Hamida (@651Shadow): Cybersecurity student at SUTech (Class of 2029), SaaS security reviewer, full-stack web/API developer, and Python automation engineer.">
+  <link rel="canonical" href="https://651shadow.github.io/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Abdelrahman Hamida (@651Shadow) — Cybersecurity &amp; Full-Stack Engineer">
+  <meta property="og:description" content="SaaS security reviews, full-stack Next.js/Supabase APIs, Python automation pipelines, and Cisco network security work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://651shadow.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@abdomhamida">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a href="/" class="brand"><span class="dot"></span>Strata <small>ai / systems</small></a>
-    <nav class="nav-links" id="nav">
-      <a href="/tools/">Tools</a>
-      <a href="/prompts/">Prompts</a>
-      <a href="/products/">Packs</a>
-      <a href="/blog/">Blog</a>
-      <a href="/custom-build/">Custom build</a>
-      <a href="/#news" class="nav-cta">Get the newsletter</a>
-    </nav>
-    <button class="burger" id="burger" aria-label="menu">≡</button>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">AH</span>
+        <span>Abdelrahman Hamida</span>
+        <span class="brand-handle">@651Shadow</span>
+      </a>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow"><span class="pulse"></span> Free tools · No signup · Runs in your browser</span>
-    <h1>AI tools that work <span class="grad">the moment you open them.</span></h1>
-    <p class="lede">Strata is a public collection of free, privacy-first AI tools and prompt packs — plus done-for-you AI automation and web systems. Every tool runs client-side. No account. No upload. No tracking.</p>
-    <div class="hero-cta">
-      <a href="/tools/" class="btn btn-primary">Try the free tools →</a>
-      <a href="/prompts/" class="btn btn-ghost">Browse prompt packs</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="n" data-count="9">9</div><div class="l">free tools &amp; counting</div></div>
-      <div class="stat"><div class="n">0</div><div class="l">accounts required</div></div>
-      <div class="stat"><div class="n">100%</div><div class="l">client-side &amp; private</div></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker">The free toolkit</div>
-      <h2>Real tools. No catch.</h2>
-      <p>These aren't demos. Each one does a useful job right now, in your browser, with your data never leaving the page. Use them free — and if you want the paid prompt packs or a custom system, that's there too.</p>
-    </div>
-    <div class="grid grid-3">
-      <a class="card" href="/tools/rewriter.html"><span class="tag">Popular</span><div class="ic">✍️</div><h3>AI Text Rewriter</h3><p>Rewrite, shorten, expand, or change the tone of any text. Runs a client-side heuristic engine instantly; optional model hook for advanced modes.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/summarizer.html"><div class="ic">📚</div><h3>Article Summarizer</h3><p>Paste long text or an article and get tight bullet-point key takeaways. Sentence-scoring runs locally — nothing is sent anywhere.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/prompt-builder.html"><div class="ic">🧱</div><h3>Prompt Builder</h3><p>Turn a vague idea into a structured, copy-paste-ready prompt with role, context, constraints and format. Export as Markdown.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/hashtags.html"><div class="ic">#️⃣</div><h3>Hashtag &amp; Caption Generator</h3><p>Drop a topic and get platform-ready hashtag sets and caption hooks for X, Instagram, LinkedIn and TikTok.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/tone.html"><div class="ic">🎚️</div><h3>Tone &amp; Readability Check</h3><p>See reading level, sentence-length spread, and filler-word density. Get a plain-language rewrite suggestion.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/idea.html"><div class="ic">💡</div><h3>Content Idea Generator</h3><p>Generate 20+ angles, titles and hooks from a single keyword. Great for newsletters, threads and YouTube.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/sql.html"><div class="ic">🗄️</div><h3>SQL Explainer</h3><p>Paste a query and get a plain-English breakdown plus a safe rewrite suggestion. Useful for debugging reports.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/json.html"><div class="ic">🔧</div><h3>JSON Formatter &amp; Validator</h3><p>Pretty-print, validate and minify JSON. Detects the exact line of a syntax error. Pure JavaScript.</p><span class="go">Open tool →</span></a>
-      <a class="card" href="/tools/estimator.html"><div class="ic">📐</div><h3>AI Build Estimator</h3><p>Scoping a bot or web app? Get a realistic budget and timeline range based on Strata's delivery data.</p><span class="go">Open tool →</span></a>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--bg-soft)">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker">Prompt packs</div>
-      <h2>Prompts that actually ship work.</h2>
-      <p>Most prompt lists are filler. These are the exact structures Strata uses to build client deliverables — RAG systems, WhatsApp bots, content engines and more. Free samples on the page; full packs are paid.</p>
-    </div>
-    <div class="grid grid-3">
-      <div class="prompt-card"><div class="cat">Automation</div><h4>WhatsApp AI Agent Kit</h4><div class="desc">Role, guardrails, fallback flow and escalation logic for a production WhatsApp assistant.</div><div class="use">free sample + paid pack →</div></div>
-      <div class="prompt-card"><div class="cat">Engineering</div><h4>RAG System Blueprint</h4><div class="desc">Chunking, retrieval and answer-format prompts for a document Q&amp;A system that doesn't hallucinate.</div><div class="use">free sample + paid pack →</div></div>
-      <div class="prompt-card"><div class="cat">Content</div><h4>Newsletter Engine</h4><div class="desc">From blank page to published: research, draft, edit and subject-line prompts for a weekly send.</div><div class="use">free sample + paid pack →</div></div>
-    </div>
-    <div class="mt"><a href="/prompts/" class="btn btn-ghost">See all prompt packs →</a></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker">Get the systems</div>
-      <h2>Pick a level. Start free.</h2>
-      <p>Free tools forever. Paid prompt packs when you want leverage. A done-for-you build when you want it handled.</p>
-    </div>
-    <div class="price-grid">
-      <div class="price">
-        <h3>Free</h3><div class="sub">For everyone</div>
-        <div class="amt">$0</div>
-        <ul>
-          <li><span class="ck">✓</span> All 9 browser tools</li>
-          <li><span class="ck">✓</span> Free prompt samples</li>
-          <li><span class="ck">✓</span> Weekly newsletter</li>
-          <li><span class="ck">✓</span> No account, no tracking</li>
-        </ul>
-        <a href="/tools/" class="btn btn-ghost">Use free tools</a>
-      </div>
-      <div class="price featured">
-        <h3>Prompt Packs</h3><div class="sub">For builders</div>
-        <div class="amt">$9<span>–$39</span></div>
-        <ul>
-          <li><span class="ck">✓</span> Copy-paste-ready systems</li>
-          <li><span class="ck">✓</span> Tested on real projects</li>
-          <li><span class="ck">✓</span> One-time, lifetime access</li>
-          <li><span class="ck">✓</span> New packs added monthly</li>
-        </ul>
-        <a href="/products/" class="btn btn-primary">Browse packs</a>
-      </div>
-      <div class="price">
-        <h3>Custom Build</h3><div class="sub">Done-for-you</div>
-        <div class="amt">$250<span>+</span></div>
-        <ul>
-          <li><span class="ck">✓</span> AI agent / automation</li>
-          <li><span class="ck">✓">Web app or dashboard</li>
-          <li><span class="ck">✓</span> Security-first engineering</li>
-          <li><span class="ck">✓</span> Live, audited portfolio</li>
-        </ul>
-        <a href="/custom-build/" class="btn btn-ghost">Scope a build</a>
+      <div class="nav-actions">
+        <nav class="nav-links" id="nav-links" aria-label="Primary">
+          <a href="#services">Focus</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#connect">Links</a>
+        </nav>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">Light</button>
+        <button class="icon-btn burger" id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">☰</button>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section style="background:var(--bg-soft)">
-  <div class="wrap">
-    <div class="cta-band">
-      <div>
-        <h2>Need a system built, not a tool?</h2>
-        <p>Strata designs and ships AI automation and web systems — WhatsApp agents, RAG platforms, dashboards and internal tooling. Tell us the outcome; we build the layers.</p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="status-pill">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Open to cybersecurity &amp; SWE internships · Freelance builds</span>
+        </div>
+
+        <h1>Abdelrahman Hamida</h1>
+        <div class="hero-sub">
+          <span>@651Shadow</span>
+          <span class="sep" aria-hidden="true">·</span>
+          <span>Network &amp; Cyber Security @ SUTech (Class of 2029)</span>
+          <span class="sep" aria-hidden="true">·</span>
+          <span>Alexandria, Egypt</span>
+        </div>
+
+        <p class="hero-lede">
+          Cybersecurity student and full-stack software engineer building secure web applications, API infrastructure, and Python automation pipelines. I focus on the engineering layers that make software reliable in production: authorization boundaries, validation, security testing, and clean delivery.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">Explore Projects</a>
+          <a class="btn btn-secondary" href="#connect">All Links &amp; Socials</a>
+          <a class="btn btn-secondary" href="mailto:abdelrhman.dado123@gmail.com">Email Me</a>
+        </div>
+
+        <div class="social-strip" aria-label="Quick links">
+          <a class="social-chip" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">
+            <span class="chip-label">GitHub</span>
+            <span>651Shadow ↗</span>
+          </a>
+          <a class="social-chip" href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">
+            <span class="chip-label">LinkedIn</span>
+            <span>abdelrhman-hamida ↗</span>
+          </a>
+          <a class="social-chip" href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">
+            <span class="chip-label">X</span>
+            <span>@abdomhamida ↗</span>
+          </a>
+          <a class="social-chip" href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">
+            <span class="chip-label">Contra</span>
+            <span>abdelrahman_hamida ↗</span>
+          </a>
+          <a class="social-chip" href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">
+            <span class="chip-label">Devpost</span>
+            <span>abdelrhman-dado123 ↗</span>
+          </a>
+          <a class="social-chip" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">
+            <span class="chip-label">Live App</span>
+            <span>theglitchstore.com ↗</span>
+          </a>
+        </div>
       </div>
-      <a href="/custom-build/" class="btn btn-primary">Start a build →</a>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker">From the blog</div>
-      <h2>Build notes &amp; field guides.</h2>
-      <p>Practical write-ups on shipping AI systems without the hype — what works, what breaks, and how to price it.</p>
-    </div>
-    <div class="grid grid-2">
-      <a class="post" href="/blog/ai-agent-without-monthly-cost.html"><div class="date">2026 · 07</div><div><h4>How to ship an AI agent with zero monthly infra cost</h4><p>The exact pattern behind Strata's free tools — client-side logic, smart caching, and when to pay for a model call.</p></div></a>
-      <a class="post" href="/blog/whatsapp-bot-blueprint.html"><div class="date">2026 · 07</div><div><h4>The WhatsApp AI bot blueprint (that doesn't get you banned)</h4><p>Guardrails, rate limits, and fallback flows for a production WhatsApp assistant on the Business API.</p></div></a>
-      <a class="post" href="/blog/prompt-packs-that-sell.html"><div class="date">2026 · 07</div><div><h4>Why prompt packs sell (and the ones that don't)</h4><p>A look at what makes a prompt library worth paying for versus a folder of copy-paste text.</p></div></a>
-      <a class="post" href="/blog/rag-without-hallucinations.html"><div class="date">2026 · 07</div><div><h4>RAG without the hallucinations: chunking that actually works</h4><p>A practical breakdown of retrieval setups we use on client document systems.</p></div></a>
-    </div>
-  </div>
-</section>
+    <section class="section section-alt" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Core Disciplines</div>
+            <h2>What I Build &amp; Audit</h2>
+            <p class="section-desc">Combining offensive/defensive security fundamentals with production full-stack and automation engineering.</p>
+          </div>
+        </div>
 
-<section id="news">
-  <div class="wrap">
-    <div class="news">
-      <h2>One useful email a week.</h2>
-      <p>No spam. A free tool drop, a prompt worth keeping, and one field note on building AI systems. Unsubscribe anytime.</p>
-      <form id="news-form" action="https://formspree.io/f/REPLACE_ME" method="POST" target="_blank">
-  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-        <input type="email" name="email" placeholder="you@domain.com" required>
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-      <p class="note">We use a privacy-first form endpoint. Your email is never sold or shared.</p>
-    </div>
-  </div>
-</section>
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge badge-accent">AppSec</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Authorization · OWASP</span>
+            </div>
+            <h3>SaaS Security &amp; Production-Readiness Reviews</h3>
+            <p>Fixed-scope, authorization-gated reviews for Next.js, React, and Supabase apps. Covers tenant isolation, RLS policies, SSRF/XSS vectors, race conditions in billing/credits, webhook verification, and prioritized remediation.</p>
+          </article>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-col" style="max-width:280px">
-        <a href="/" class="brand" style="margin-bottom:12px"><span class="dot"></span>Strata</a>
-        <p class="muted" style="font-size:14px">Free AI tools, prompt packs, and done-for-you AI systems. Built by engineers, shipped in layers.</p>
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge">Full-Stack</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Next.js · NestJS · Supabase</span>
+            </div>
+            <h3>Web Applications &amp; Secure API Proxies</h3>
+            <p>End-to-end web products and serverless APIs with strict input validation, atomic credit/ledger accounting, rate limiting, security headers, and accessible responsive UIs.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge">Automation</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Python · Playwright · ETL</span>
+            </div>
+            <h3>Python Automation &amp; Scraping Pipelines</h3>
+            <p>Automated data extraction, messy B2B lead deduplication and normalization, PDF invoice parsing/renaming, competitor price-monitoring alerts, and styled multi-tab Excel reporting.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge">Networking</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">VLANs · ACLs · NetFlow</span>
+            </div>
+            <h3>Network Segmentation &amp; Topology Design</h3>
+            <p>Segmented enterprise and campus network topologies in Cisco Packet Tracer with isolated guest Wi-Fi VLANs, inter-VLAN ACLs, NAT, Syslog, and NetFlow telemetry.</p>
+          </article>
+        </div>
       </div>
-      <div class="foot-col"><h5>Tools</h5><a href="/tools/rewriter.html">Text Rewriter</a><a href="/tools/summarizer.html">Summarizer</a><a href="/tools/prompt-builder.html">Prompt Builder</a><a href="/tools/estimator.html">Build Estimator</a></div>
-      <div class="foot-col"><h5>Products</h5><a href="/products/">Prompt Packs</a><a href="/prompts/">Free Prompts</a><a href="/custom-build/">Custom Build</a><a href="/blog/">Blog</a></div>
-      <div class="foot-col"><h5>Proof</h5><a href="https://theglitchstore.com" target="_blank" rel="noopener">The Glitch Store ↗</a><a href="https://github.com/651Shadow" target="_blank" rel="noopener">GitHub ↗</a><a href="https://x.com" target="_blank" rel="noopener">X / Twitter ↗</a></div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Strata. Free to use. Built in layers.</span>
-      <span class="mono">privacy-first · client-side · no tracking</span>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<script>
-const b=document.getElementById('burger'),n=document.getElementById('nav');
-b&&b.addEventListener('click',()=>n.classList.toggle('open'));
-// simple count-up for the first stat
-const el=document.querySelector('[data-count]');
-if(el){const t=+el.textContent;let c=0;const id=setInterval(()=>{c+=Math.ceil(t/18);if(c>=t){c=t;clearInterval(id)}el.textContent=c},40)}
-// newsletter: replace placeholder endpoint at runtime is intentional; this just prevents dead submit noise
-document.getElementById('news-form')?.addEventListener('submit',e=>{const a=e.target.getAttribute('action');if(a&&a.includes('REPLACE_ME')){e.preventDefault();alert('Newsletter endpoint not configured yet — set FORMSPREE_ID in the form action. Meanwhile, follow @Strata on X for updates.')}});
-</script>
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Selected Work</div>
+            <h2>Shipped Systems &amp; Public Proof</h2>
+            <p class="section-desc">Live deployments, open-source security tools, sanitized audit reports, and academic networking projects.</p>
+          </div>
+
+          <div class="filter-bar" role="group" aria-label="Filter projects by category">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-btn" type="button" data-filter="security" aria-pressed="false">Security</button>
+            <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-Stack &amp; APIs</button>
+            <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+            <span class="mono" id="project-count" style="font-size:12px;color:var(--text-subtle);margin-left:4px;">8 projects</span>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card project-card" data-categories="security,fullstack">
+            <div class="card-meta">
+              <span class="badge badge-accent">Flagship · Live</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">API Marketplace</span>
+            </div>
+            <h3>The Glitch Store</h3>
+            <p>Prepaid-credit API proxy marketplace offering unified key access across 9+ utility APIs with pay-per-call billing, Argon2id key hashing, AES-256-GCM upstream credential encryption, and self-audited SSRF and race-condition protections.</p>
+            <div class="tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">AppSec</span>
+            </div>
+            <div class="card-links">
+              <a href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              <span class="muted-note">Private codebase · Publicly audited</span>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="security">
+            <div class="card-meta">
+              <span class="badge badge-accent">AppSec Deliverable</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Redacted Reports</span>
+            </div>
+            <h3>SaaS Security Snapshot &amp; Review Samples</h3>
+            <p>Sanitized security audit deliverables drawn from Next.js + Supabase production reviews—documenting 15 prioritized findings (3 Critical, 4 High, 5 Medium, 3 Low) across RLS access control, SSRF, atomic credit ledgers, stored XSS, and CSP hardening.</p>
+            <div class="tags">
+              <span class="tag">OWASP</span>
+              <span class="tag">Supabase RLS</span>
+              <span class="tag">Threat Modeling</span>
+              <span class="tag">PDF Report</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/651Shadow/saas-security-snapshot-sample" target="_blank" rel="noopener noreferrer">Snapshot Sample ↗</a>
+              <a href="https://github.com/651Shadow/security-review-sample" target="_blank" rel="noopener noreferrer">15-Finding Table ↗</a>
+              <a href="https://contra.com/s/lkecvYks-saa-s-security-snapshot?r=abdelrahman_hamida" target="_blank" rel="noopener noreferrer">Contra Service ↗</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="security">
+            <div class="card-meta">
+              <span class="badge">Network Security</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">SUTech CET261</span>
+            </div>
+            <h3>University Department Network &amp; Secure VLANs</h3>
+            <p>Phase 1 architecture, Packet Tracer 9.0.1 topology, and rationale for a segmented department network (Faculty, Students, Admin, Management, and isolated Guest Wi-Fi VLANs) enforcing inter-VLAN ACL boundaries, NAT, NetFlow v9, and Syslog monitoring.</p>
+            <div class="tags">
+              <span class="tag">Cisco Packet Tracer</span>
+              <span class="tag">VLANs &amp; ACLs</span>
+              <span class="tag">NAT</span>
+              <span class="tag">NetFlow / Syslog</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/651Shadow/University-Department-Network-with-Guest-Wi-Fi-Secure-VLANs" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="fullstack,security">
+            <div class="card-meta">
+              <span class="badge">Serverless API</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">TypeScript · Vercel</span>
+            </div>
+            <h3>Web-to-Markdown API</h3>
+            <p>Serverless API that converts public web pages or raw HTML into clean Markdown for LLM and RAG pipelines—engineered with SSRF defenses blocking localhost/private networks, redirect-chain validation, payload limits, and rate limiting.</p>
+            <div class="tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Vercel</span>
+              <span class="tag">SSRF Defense</span>
+              <span class="tag">REST API</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/651Shadow/web-to-markdown-api" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="automation">
+            <div class="card-meta">
+              <span class="badge">Automation Suite</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Python · Streamlit</span>
+            </div>
+            <h3>Python Automation &amp; Scraping Suite</h3>
+            <p>Interactive client-ready automation suite demonstrating three freelance pipelines: messy B2B lead deduplication and phone/revenue normalization, PDF invoice OCR/parsing with ZIP + Excel ledger export, and competitor price-drop alerts with Slack/email payloads.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">httpx / BS4</span>
+              <span class="tag">openpyxl</span>
+              <span class="tag">pytest</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+              <span class="muted-note">Client demo suite (local workspace)</span>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="fullstack">
+            <div class="card-meta">
+              <span class="badge">Web App</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">React 18 · Vite</span>
+            </div>
+            <h3>Glitch Labs</h3>
+            <p>Static developer storefront, interactive DevBox preview, and Markdown technical blog built with React 18, TypeScript, and Vite—supporting dual card and non-custodial crypto checkout links with zero server overhead.</p>
+            <div class="tags">
+              <span class="tag">React 18</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Vite</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/651Shadow/glitch-labs" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="fullstack">
+            <div class="card-meta">
+              <span class="badge">Frontend Deliverable</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Next.js 16 · WCAG AA</span>
+            </div>
+            <h3>Taza Produce</h3>
+            <p>Seven-route Next.js 16 and TypeScript marketing site built to WCAG 2.2 AA contrast and accessibility standards, featuring light/dark semantic tokens, AVIF/WebP image optimization, and a rate-limited contact endpoint.</p>
+            <div class="tags">
+              <span class="tag">Next.js 16</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">WCAG 2.2 AA</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/651Shadow/taza-produce" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+              <a href="https://contra.com/p/R2PZrRqL-taza-produce-website" target="_blank" rel="noopener noreferrer">Contra Case ↗</a>
+            </div>
+          </article>
+
+          <article class="card project-card" data-categories="automation">
+            <div class="card-meta">
+              <span class="badge">Desktop Utility</span>
+              <span class="mono" style="font-size:12px;color:var(--text-subtle)">Python · Tkinter</span>
+            </div>
+            <h3>Currency &amp; Unit Converter</h3>
+            <p>Desktop Tkinter application supporting live currency and unit conversions with offline rate fallback, CLI verification mode, automated tests, and clean packaging.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Tkinter</span>
+              <span class="tag">CLI</span>
+              <span class="tag">Tests</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/651Shadow/Currency-Converter-Project" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="education">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Background &amp; Capabilities</div>
+            <h2>Education &amp; Technical Stack</h2>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div>
+            <h3>Elsewedy University of Technology – Polytechnic of Egypt (SUTech)</h3>
+            <p class="edu-program">Department of Computer Science Technology — Network &amp; Cyber Security Program</p>
+          </div>
+          <div class="edu-meta">
+            <div>Expected Graduation: 2029</div>
+            <div>Alexandria / Egypt</div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Security &amp; Networking</h3>
+            <p>Hands-on application security auditing and segmented network design.</p>
+            <div class="stack-list">
+              <span class="tag">OWASP Top 10</span>
+              <span class="tag">AppSec Reviews</span>
+              <span class="tag">Supabase RLS</span>
+              <span class="tag">SSRF / XSS</span>
+              <span class="tag">Race Conditions</span>
+              <span class="tag">HTTP Security Headers</span>
+              <span class="tag">Cisco Packet Tracer</span>
+              <span class="tag">VLANs / ACLs / NAT</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Languages &amp; Web Stack</h3>
+            <p>Type-safe full-stack apps, REST APIs, and production deployments.</p>
+            <div class="stack-list">
+              <span class="tag">Python</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Vercel</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Automation &amp; Engineering QA</h3>
+            <p>Repeatable scraping, document pipelines, and verification workflows.</p>
+            <div class="stack-list">
+              <span class="tag">Playwright</span>
+              <span class="tag">Selenium</span>
+              <span class="tag">httpx / BeautifulSoup</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">pypdf / openpyxl</span>
+              <span class="tag">pytest</span>
+              <span class="tag">Git &amp; GitHub</span>
+              <span class="tag">Linux / CLI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="connect">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Links &amp; Socials</div>
+            <h2>Find Me Online</h2>
+            <p class="section-desc">Reach out for cybersecurity or software engineering internships, SaaS security reviews, or Python automation builds.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <a class="connect-card" href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="connect-name">GitHub</div>
+              <div class="connect-handle">github.com/651Shadow</div>
+            </div>
+            <span class="connect-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="connect-card" href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="connect-name">LinkedIn</div>
+              <div class="connect-handle">linkedin.com/in/abdelrhman-hamida</div>
+            </div>
+            <span class="connect-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="connect-card" href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="connect-name">X / Twitter</div>
+              <div class="connect-handle">x.com/abdomhamida</div>
+            </div>
+            <span class="connect-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="connect-card" href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="connect-name">Contra</div>
+              <div class="connect-handle">contra.com/abdelrahman_hamida</div>
+            </div>
+            <span class="connect-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="connect-card" href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="connect-name">Devpost</div>
+              <div class="connect-handle">devpost.com/abdelrhman-dado123</div>
+            </div>
+            <span class="connect-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="connect-card" href="https://theglitchstore.com" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="connect-name">The Glitch Store</div>
+              <div class="connect-handle">theglitchstore.com</div>
+            </div>
+            <span class="connect-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="copy-row">
+          <div>
+            <div class="connect-name">Direct Email</div>
+            <div class="connect-handle">abdelrhman.dado123@gmail.com</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;">
+            <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+            <button class="btn btn-secondary" id="copy-email" type="button" data-email="abdelrhman.dado123@gmail.com">Copy Email</button>
+            <a class="btn btn-primary" href="mailto:abdelrhman.dado123@gmail.com">Send Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Abdelrahman Hamida (@651Shadow) · Alexandria, Egypt</span>
+      <div class="footer-links">
+        <a href="https://github.com/651Shadow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdelrhman-hamida/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/abdomhamida" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://contra.com/abdelrahman_hamida" target="_blank" rel="noopener noreferrer">Contra</a>
+        <a href="https://devpost.com/abdelrhman-dado123" target="_blank" rel="noopener noreferrer">Devpost</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
