@@ -17,7 +17,7 @@
   --accent-bright: #c4b5fd;
   --accent-soft: rgba(139, 92, 246, 0.16);
   --accent-ink: #ffffff;
-  --header-bg: rgba(5, 5, 8, 0.92);
+  --header-bg: rgba(5, 5, 8, 0.72);
   --radius: 2px;
   --chamfer: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
   --chamfer-sm: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
@@ -46,7 +46,7 @@
   --accent-bright: #5b21b6;
   --accent-soft: rgba(124, 58, 237, 0.1);
   --accent-ink: #ffffff;
-  --header-bg: rgba(246, 244, 252, 0.94);
+  --header-bg: rgba(246, 244, 252, 0.76);
 }
 
 *,
@@ -58,7 +58,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -68,7 +68,7 @@ body {
   font-family: var(--font-sans);
   font-size: clamp(1rem, 0.95rem + 0.28vw, 1.14rem);
   line-height: 1.62;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -124,7 +124,8 @@ textarea:focus-visible {
   top: 0;
   z-index: 100;
   background: var(--header-bg);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
