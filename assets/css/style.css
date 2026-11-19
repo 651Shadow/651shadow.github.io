@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #050508;
   --bg-alt: #09080f;
   --surface: #110f1a;
@@ -27,6 +28,7 @@
 }
 
 [data-theme="light"] {
+  color-scheme: light;
   --bg: #f6f4fc;
   --bg-alt: #ede9fe;
   --surface: #ffffff;
@@ -73,6 +75,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 a:focus-visible,
@@ -508,6 +516,10 @@ a.panel:hover {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text);
+}
+
+.graph-title--offset {
+  margin-left: 0.75rem;
 }
 
 .graph-sub {
@@ -1012,18 +1024,24 @@ h3 {
 }
 
 .btn-outline-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.45rem 0.75rem;
   border-radius: var(--radius);
   border: 1px solid var(--border-strong);
+  background-color: var(--bg-alt);
+  cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.76rem;
+  line-height: 1.2;
   color: var(--accent-bright);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .btn-outline-sm:hover,
 .btn-outline-sm[aria-pressed="true"] {
-  background: var(--accent-soft);
+  background-color: var(--surface-hover);
   color: var(--text);
   border-color: var(--accent-light);
 }
@@ -1143,6 +1161,10 @@ h3 {
   font-size: 0.78rem;
   color: var(--accent-light);
   min-height: 1.1em;
+}
+
+#contact-status {
+  margin-top: 0.65rem;
 }
 
 /* Socials Matrix: Icons + Platform Name Only */

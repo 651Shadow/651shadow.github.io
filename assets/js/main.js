@@ -9,6 +9,7 @@
   const copyBtns = Array.from(document.querySelectorAll("[data-copy-email]"));
   const copyStatus = document.getElementById("copy-status");
   const contactForm = document.getElementById("contact-form");
+  const contactStatus = document.getElementById("contact-status");
   const togglePdfBtn = document.getElementById("toggle-raw-pdf");
   const pdfIframe = document.getElementById("pdf-report-iframe");
   const toggleGlitchBtn = document.getElementById("toggle-glitch-arch");
@@ -21,8 +22,21 @@
   }
 
   const syncThemeSwitch = () => {
-    if (!themeBtn) return;
     const isDark = root.getAttribute("data-theme") !== "light";
+    const colorSchemeMeta = document.getElementById("color-scheme-meta");
+    if (colorSchemeMeta) {
+      colorSchemeMeta.setAttribute("content", isDark ? "dark" : "light");
+    }
+    const existingLock = document.getElementById("darkreader-lock-meta");
+    if (isDark && !existingLock) {
+      const lock = document.createElement("meta");
+      lock.id = "darkreader-lock-meta";
+      lock.name = "darkreader-lock";
+      document.head.appendChild(lock);
+    } else if (!isDark && existingLock) {
+      existingLock.remove();
+    }
+    if (!themeBtn) return;
     themeBtn.setAttribute("aria-checked", String(isDark));
     themeBtn.setAttribute("aria-label", isDark ? "Dark mode enabled, switch to light mode" : "Light mode enabled, switch to dark mode");
   };
@@ -105,6 +119,9 @@
     const meta = [name ? `From: ${name}` : "", replyEmail ? `Reply-To: ${replyEmail}` : ""].filter(Boolean).join("\n");
     const fullBody = meta ? `${meta}\n\n${bodyText}` : bodyText;
     const mailtoUrl = `mailto:abdelrahman.m.magdy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullBody)}`;
+    if (contactStatus) {
+      contactStatus.textContent = "Opening your email client... If nothing opens, email abdelrahman.m.magdy@gmail.com directly or use Copy email below.";
+    }
     window.location.href = mailtoUrl;
   });
 
