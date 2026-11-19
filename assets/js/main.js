@@ -130,7 +130,7 @@
     const current = pdfIframe.getAttribute("src") || "";
     const showingRaw = current.endsWith(".pdf");
     if (showingRaw) {
-      pdfIframe.setAttribute("src", "/previews/security-snapshot-pdf.html");
+      pdfIframe.setAttribute("src", "/previews/security-snapshot-pdf.html#embed");
       togglePdfBtn.textContent = "Raw PDF";
       togglePdfBtn.setAttribute("aria-pressed", "false");
     } else {
@@ -152,7 +152,7 @@
         glitchBarLabel.textContent = "https://theglitchstore.com (Landing Page Preview)";
       }
     } else {
-      glitchIframe.setAttribute("src", "/previews/glitch-store-architecture.html");
+      glitchIframe.setAttribute("src", "/previews/glitch-store-architecture.html#embed");
       toggleGlitchBtn.textContent = "Landing Preview";
       toggleGlitchBtn.setAttribute("aria-pressed", "true");
       if (glitchBarLabel) {

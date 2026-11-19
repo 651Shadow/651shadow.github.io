@@ -42,6 +42,8 @@
       padding: 3px 8px;
     }
     .toolbar a:hover { background: rgba(139, 92, 246, 0.18); }
+    #embed { display: none; }
+    #embed:target + .toolbar { display: none; }
     .sheet {
       max-width: 760px;
       margin: 0 auto 16px;
@@ -121,6 +123,7 @@
   </style>
 </head>
 <body>
+  <span id="embed" aria-hidden="true"></span>
   <div class="toolbar">
     <span>Security-Snapshot-Sample-Report.pdf (3 Pages + 15 Findings)</span>
     <div style="display:flex;gap:8px;">
