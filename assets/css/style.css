@@ -57,12 +57,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
   -webkit-text-size-adjust: 100%;
   overflow-x: clip;
 }
 
 body {
   margin: 0;
+  padding-top: calc(4rem + 1px);
   background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
@@ -70,6 +72,39 @@ body {
   line-height: 1.62;
   overflow-x: clip;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  border-color: var(--accent-light);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg);
+  }
 }
 
 a {
@@ -118,10 +153,12 @@ textarea:focus-visible {
   font-family: var(--font-mono);
 }
 
-/* Sticky Header + Command Prompt Root + Rectangular Switch */
+/* Fixed Translucent Header + Command Prompt Root + Rectangular Switch */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: var(--header-bg);
   -webkit-backdrop-filter: blur(12px);
