@@ -39,6 +39,8 @@
       padding: 3px 8px;
     }
     header a:hover { background: rgba(124, 58, 237, 0.25); color: #ffffff; }
+    #embed { display: none; }
+    #embed:target + header { display: none; }
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -117,6 +119,7 @@
   </style>
 </head>
 <body>
+  <span id="embed" aria-hidden="true"></span>
   <header class="mono">
     <span>root@651shadow:~# ./architecture --target=theglitchstore.com</span>
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
