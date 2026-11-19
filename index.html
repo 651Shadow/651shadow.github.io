@@ -54,7 +54,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261119">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261119b">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -175,27 +175,27 @@
             <div class="bar-chart">
               <div class="bar-row">
                 <span class="bar-label">Proxy &amp; SSRF / Secret Exposure</span>
-                <div class="bar-track"><div class="bar-fill" style="width:88%;"></div></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--88"></div></div>
                 <span class="bar-val">4 findings</span>
               </div>
               <div class="bar-row">
                 <span class="bar-label">Access Control &amp; RLS Policies</span>
-                <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--70"></div></div>
                 <span class="bar-val">3 findings</span>
               </div>
               <div class="bar-row">
                 <span class="bar-label">Billing Ledgers &amp; Auth Flow</span>
-                <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--70"></div></div>
                 <span class="bar-val">3 findings</span>
               </div>
               <div class="bar-row">
                 <span class="bar-label">Dependencies, Filters &amp; Errors</span>
-                <div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--70"></div></div>
                 <span class="bar-val">3 findings</span>
               </div>
               <div class="bar-row">
                 <span class="bar-label">Stored XSS &amp; Security Headers</span>
-                <div class="bar-track"><div class="bar-fill" style="width:48%;"></div></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--48"></div></div>
                 <span class="bar-val">2 findings</span>
               </div>
             </div>
@@ -206,12 +206,12 @@
               <div class="snapshot-email-label">Direct email &amp; CV</div>
               <div class="snapshot-email-addr">abdelrahman.m.magdy@gmail.com</div>
             </div>
-            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <div class="snapshot-actions">
               <button class="icon-btn" id="hero-copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="hero-copy-status">Copy email</button>
               <a class="icon-btn" href="/previews/cv.html" target="_blank" rel="noopener noreferrer">Open CV</a>
             </div>
           </div>
-          <div class="copy-status" id="hero-copy-status" role="status" aria-live="polite" style="padding:0 1.25rem 0.65rem;background:var(--bg-alt);"></div>
+          <div class="copy-status copy-status--snapshot" id="hero-copy-status" role="status" aria-live="polite"></div>
         </aside>
       </div>
     </section>
@@ -265,7 +265,7 @@
           </div>
 
           <div class="about-right-col">
-            <div class="panel corner-brackets" style="padding:1.25rem;">
+            <div class="panel corner-brackets panel--padded">
               <div class="graph-head">
                 <span class="graph-title graph-title--offset">System &amp; Verification Matrix</span>
                 <span class="graph-sub">Verified public proof by domain</span>
@@ -306,7 +306,7 @@
             </div>
 
             <div class="panel corner-brackets">
-              <div class="graph-block" style="border-bottom:none;">
+              <div class="graph-block graph-block--borderless">
                 <div class="graph-head">
                   <span class="graph-title">Shipped Engineering Footprint</span>
                   <span class="graph-sub">Across public repos &amp; live systems</span>
@@ -314,29 +314,29 @@
                 <div class="bar-chart">
                   <div class="bar-row">
                     <span class="bar-label">AppSec &amp; Network Security</span>
-                    <div class="bar-track"><div class="bar-fill" style="width:90%;"></div></div>
+                    <div class="bar-track"><div class="bar-fill bar-fill--90"></div></div>
                     <span class="bar-val">4 artifacts</span>
                   </div>
                   <div class="bar-row">
                     <span class="bar-label">Full-Stack Web &amp; APIs</span>
-                    <div class="bar-track"><div class="bar-fill" style="width:85%;"></div></div>
+                    <div class="bar-track"><div class="bar-fill bar-fill--85"></div></div>
                     <span class="bar-val">4 systems</span>
                   </div>
                   <div class="bar-row">
                     <span class="bar-label">Python ETL &amp; Agent Pipelines</span>
-                    <div class="bar-track"><div class="bar-fill" style="width:72%;"></div></div>
+                    <div class="bar-track"><div class="bar-fill bar-fill--72"></div></div>
                     <span class="bar-val">3 systems</span>
                   </div>
                   <div class="bar-row">
                     <span class="bar-label">Automated Test &amp; Type Safety</span>
-                    <div class="bar-track"><div class="bar-fill" style="width:80%;"></div></div>
+                    <div class="bar-track"><div class="bar-fill bar-fill--80"></div></div>
                     <span class="bar-val">pytest + tsc</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="panel corner-brackets" style="padding:1.25rem;">
+            <div class="panel corner-brackets panel--padded">
               <pre class="terminal-code"><code><span class="term-key">$ whoami</span>
 <span class="term-val">Abdelrahman Magdy Hamida (@651Shadow)</span>
 
@@ -414,7 +414,7 @@
             <button class="filter-btn" type="button" data-filter="security" aria-pressed="false">Security</button>
             <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-stack &amp; APIs</button>
             <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false">Automation &amp; AI</button>
-            <span class="mono" id="project-count" style="font-size:0.82rem;color:var(--text-subtle);margin-left:4px;">8 projects</span>
+            <span class="mono project-count" id="project-count">8 projects</span>
           </div>
         </div>
 
@@ -429,7 +429,7 @@
                 <li>AES-256-GCM encryption for upstream provider keys (<code>ADMIN_KEY_ENCRYPTION_KEY</code>)</li>
                 <li>Atomic Postgres <code>deduct_credits</code> RPC with <code>CHECK (credits_balance &gt;= 0)</code> constraint</li>
               </ul>
-              <div class="skill-pills" style="margin-top:1rem;">
+              <div class="skill-pills skill-pills--spotlight">
                 <span class="skill-pill">Next.js 16</span>
                 <span class="skill-pill">Supabase</span>
                 <span class="skill-pill">Argon2id + HMAC</span>
@@ -466,11 +466,11 @@
                 <div class="sev-cell"><span class="sev-num">3</span><span class="sev-lbl">Low</span></div>
               </div>
 
-              <p style="margin-top:0.85rem;font-size:0.88rem;">
+              <p class="spotlight-subnote">
                 Covers privilege escalation via unrestricted RLS updates, balance tampering, O(N) Argon2id CPU exhaustion, SSRF via proxy redirects, stored JSON-LD XSS, and CSP/HSTS hardening.
               </p>
 
-              <div class="skill-pills" style="margin-top:1rem;">
+              <div class="skill-pills skill-pills--spotlight">
                 <span class="skill-pill">OWASP</span>
                 <span class="skill-pill">Supabase RLS</span>
                 <span class="skill-pill">SSRF / XSS</span>
@@ -505,7 +505,7 @@
             <div class="proj-body">
               <h3>University Network &amp; Secure VLANs</h3>
               <p>Cisco Packet Tracer 9.0.1 topology segmenting Faculty, Students, Admin, Management, and Guest Wi-Fi with directional inter-VLAN ACLs, PAT/NAT, NetFlow v9, and centralized Syslog.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
+              <div class="skill-pills skill-pills--card">
                 <span class="skill-pill">Packet Tracer</span>
                 <span class="skill-pill">VLANs</span>
                 <span class="skill-pill">ACLs / NetFlow</span>
@@ -524,7 +524,7 @@
             <div class="proj-body">
               <h3>Web-to-Markdown API</h3>
               <p>Converts public URLs or raw HTML into structured Markdown for LLM and RAG ingestion agents while blocking localhost, private IP ranges, and internal redirect chains.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
+              <div class="skill-pills skill-pills--card">
                 <span class="skill-pill">TypeScript</span>
                 <span class="skill-pill">RAG ETL</span>
                 <span class="skill-pill">SSRF defense</span>
@@ -544,7 +544,7 @@
             <div class="proj-body">
               <h3>Automation &amp; Scraping Suite</h3>
               <p>Streamlit Python suite built for data-ops automation: deduplicates B2B leads, parses PDF invoices into standardized renamed ZIP archives, builds styled Excel workbooks, and verifies all flows with pytest.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
+              <div class="skill-pills skill-pills--card">
                 <span class="skill-pill">Python</span>
                 <span class="skill-pill">Streamlit</span>
                 <span class="skill-pill">openpyxl</span>
@@ -564,7 +564,7 @@
             <div class="proj-body">
               <h3>API Gateway Hardening Deep-Dive</h3>
               <p>Sanitized architectural breakdown of O(1) HMAC-SHA256 + Argon2id lookup, DNS-rebinding SSRF validation, AES-256-GCM secrets, and non-negative Postgres credit ledgers.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
+              <div class="skill-pills skill-pills--card">
                 <span class="skill-pill">Threat Model</span>
                 <span class="skill-pill">PL/pgSQL</span>
                 <span class="skill-pill">TypeScript</span>
@@ -583,7 +583,7 @@
             <div class="proj-body">
               <h3>Glitch Labs</h3>
               <p>Static developer storefront, interactive DevBox preview, and Markdown technical blog deployed via GitHub Actions with dual card and crypto checkout links.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
+              <div class="skill-pills skill-pills--card">
                 <span class="skill-pill">React 18</span>
                 <span class="skill-pill">TypeScript</span>
                 <span class="skill-pill">Vite</span>
@@ -603,7 +603,7 @@
             <div class="proj-body">
               <h3>Taza Produce</h3>
               <p>Seven-route Next.js 16 and TypeScript marketing site built to WCAG 2.2 AA contrast standards with dark/light themes, AVIF/WebP media, and rate-limited forms.</p>
-              <div class="skill-pills" style="margin-top:0.85rem;">
+              <div class="skill-pills skill-pills--card">
                 <span class="skill-pill">Next.js 16</span>
                 <span class="skill-pill">TypeScript</span>
                 <span class="skill-pill">Tailwind</span>
@@ -621,7 +621,7 @@
 
     <section class="section section-alt" id="connect">
       <div class="wrap">
-        <h2 style="margin-bottom:1.5rem;">Let's Work Together</h2>
+        <h2 class="connect-heading">Let's Work Together</h2>
         <div class="connect-grid">
           <div class="panel corner-brackets connect-form-card">
             <h3>Send me a message</h3>
@@ -644,13 +644,13 @@
                 <label class="field-label" for="msg-body">Message</label>
                 <textarea class="field-textarea" id="msg-body" placeholder="Tell me about the role, team, scope, or system you are hardening..."></textarea>
               </div>
-              <button class="btn btn-primary" type="submit" style="width:100%;">Open in email client</button>
+              <button class="btn btn-primary btn-block" type="submit">Open in email client</button>
               <div class="copy-status" id="contact-status" role="status" aria-live="polite"></div>
             </form>
 
             <div class="email-inline">
               <div>
-                <div class="mono" style="font-size:0.84rem;color:var(--text);">abdelrahman.m.magdy@gmail.com</div>
+                <div class="mono email-inline-addr">abdelrahman.m.magdy@gmail.com</div>
                 <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
               </div>
               <button class="icon-btn" id="copy-email" type="button" data-copy-email data-email="abdelrahman.m.magdy@gmail.com" data-status-target="copy-status">Copy email</button>
@@ -667,7 +667,7 @@
                 <li>API proxy backends, LLM/RAG pipelines &amp; MCP tooling</li>
                 <li>Python scraping, PDF ETL, and pytest-verified automation</li>
               </ul>
-              <div class="cta-row" style="margin:1rem 0 0;">
+              <div class="cta-row cta-row--compact">
                 <a class="btn btn-primary btn-card" href="/assets/docs/Abdelrahman-Hamida-CV.pdf" download>Download CV (PDF)</a>
                 <a class="btn-outline-sm" href="/previews/cv.html" target="_blank" rel="noopener noreferrer">View HTML CV</a>
               </div>
