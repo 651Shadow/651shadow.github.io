@@ -47,6 +47,13 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+svg[hidden] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
 html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   margin: 0;
