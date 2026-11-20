@@ -5,128 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="darkreader-lock">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'self'">
   <title>SaaS Security Snapshot Detailed Report</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 14px;
-      background: #141122;
-      color: #111827;
-      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-      font-size: 12.5px;
-      line-height: 1.5;
-    }
-    .toolbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      margin: -14px -14px 14px;
-      padding: 8px 14px;
-      background: #0d0a18;
-      border-bottom: 1px solid rgba(139, 92, 246, 0.35);
-      color: #e5e7eb;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 11px;
-    }
-    .toolbar a {
-      color: #c4b5fd;
-      text-decoration: none;
-      border: 1px solid rgba(139, 92, 246, 0.45);
-      padding: 3px 8px;
-    }
-    .toolbar a:hover { background: rgba(139, 92, 246, 0.18); }
-    #embed { display: none; }
-    #embed:target + .toolbar { display: none; }
-    .sheet {
-      max-width: 760px;
-      margin: 0 auto 16px;
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      padding: 22px 24px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    }
-    .kicker {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #6d28d9;
-      margin-bottom: 4px;
-    }
-    h1 { margin: 0 0 4px; font-size: 20px; color: #0f172a; }
-    h2 { margin: 16px 0 8px; font-size: 15px; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
-    .sub { margin: 0 0 14px; color: #475569; font-size: 13px; }
-    .scope-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      margin-bottom: 14px;
-    }
-    .scope-cell { padding: 10px 12px; border: 1px solid #e2e8f0; }
-    .scope-cell strong { display: block; font-size: 11px; color: #1e293b; margin-bottom: 2px; }
-    .boundary {
-      border-left: 3px solid #7c3aed;
-      background: #f5f3ff;
-      padding: 10px 12px;
-      margin: 10px 0 14px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11.5px;
-      margin-top: 8px;
-    }
-    th, td {
-      border: 1px solid #cbd5e1;
-      padding: 6px 8px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th { background: #1e1b4b; color: #ffffff; font-weight: 600; }
-    tr:nth-child(even) td { background: #f8fafc; }
-    .sev {
-      font-family: ui-monospace, monospace;
-      font-weight: 700;
-      font-size: 10.5px;
-      white-space: nowrap;
-    }
-    .sev-crit { color: #b91c1c; }
-    .sev-high { color: #c2410c; }
-    .sev-med { color: #a16207; }
-    .sev-low { color: #334155; }
-    .finding-box {
-      border: 1px solid #fecaca;
-      background: #fef2f2;
-      padding: 12px;
-      margin: 10px 0;
-    }
-    .sheet-foot {
-      margin-top: 14px;
-      padding-top: 8px;
-      border-top: 1px solid #e2e8f0;
-      display: flex;
-      justify-content: space-between;
-      font-size: 10.5px;
-      color: #64748b;
-    }
-    @media (max-width: 560px) {
-      .scope-grid { grid-template-columns: 1fr; }
-      .sheet { padding: 14px; }
-    }
-  </style>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="/assets/js/theme.js?v=20261120"></script>
+  <link rel="stylesheet" href="/assets/css/previews.css?v=20261120">
 </head>
-<body>
-  <span id="embed" aria-hidden="true"></span>
+<body class="preview-doc preview-doc--compact">
   <div class="toolbar">
     <span>Security-Snapshot-Sample-Report.pdf (3 Pages + 15 Findings)</span>
-    <div style="display:flex;gap:8px;">
+    <div class="toolbar-actions">
       <a href="/assets/docs/Security-Snapshot-Sample-Report.pdf" target="_blank" rel="noopener noreferrer">Open Raw PDF</a>
       <a href="/assets/docs/Security-Snapshot-Sample-Report.pdf" download>Download PDF</a>
     </div>
@@ -159,7 +47,7 @@
 
   <article class="sheet">
     <h2>Detailed Findings Ledger (3 Critical, 4 High, 5 Medium, 3 Low)</h2>
-    <table>
+    <table class="findings-table">
       <thead>
         <tr><th>ID</th><th>Severity</th><th>Finding</th><th>Remediation Fix</th></tr>
       </thead>
@@ -191,14 +79,14 @@
   <article class="sheet">
     <h2>Finding Format Walkthrough: Server-Side Request Validation</h2>
     <div class="finding-box">
-      <p style="margin:0 0 6px;"><strong>Severity:</strong> High &nbsp;|&nbsp; <strong>Affected area:</strong> Server-side integration proxy</p>
-      <p style="margin:0 0 6px;"><strong>Risk:</strong> An attacker can make the server reach internal metadata or private network targets when requested URLs are not validated.</p>
-      <p style="margin:0 0 6px;"><strong>Safe reproduction:</strong> Confirm whether routes reject non-HTTP schemes, local/private IP ranges, cloud metadata hosts, embedded credentials, DNS rebinding, and redirects.</p>
-      <p style="margin:0;"><strong>Recommended remediation:</strong> Validate every outbound URL prior to fetch, resolve and inspect destination IPs, block private ranges, disable redirects, and add regression tests.</p>
+      <p><strong>Severity:</strong> High &nbsp;|&nbsp; <strong>Affected area:</strong> Server-side integration proxy</p>
+      <p><strong>Risk:</strong> An attacker can make the server reach internal metadata or private network targets when requested URLs are not validated.</p>
+      <p><strong>Safe reproduction:</strong> Confirm whether routes reject non-HTTP schemes, local/private IP ranges, cloud metadata hosts, embedded credentials, DNS rebinding, and redirects.</p>
+      <p><strong>Recommended remediation:</strong> Validate every outbound URL prior to fetch, resolve and inspect destination IPs, block private ranges, disable redirects, and add regression tests.</p>
     </div>
 
     <h2>Controls Verified Working</h2>
-    <ul style="margin:6px 0 0;padding-left:18px;">
+    <ul>
       <li>Kill switches for checkout, proxy, webhooks, and email that fail closed.</li>
       <li>Payment status verified directly with provider rather than trusting webhook body.</li>
       <li>API keys hashed with Argon2id; upstream credentials encrypted with AES-256-GCM.</li>
