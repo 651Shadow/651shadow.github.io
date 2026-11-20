@@ -9,6 +9,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Embedded Iframe Toolbar Suppression */
 [data-embed="true"] .toolbar { display: none !important; }
+[data-embed="true"] body.preview-doc--compact { padding-top: 14px; }
 
 /* Shared Top Toolbar */
 .toolbar {
@@ -191,6 +192,7 @@ body.preview-glitch .toolbar { background: rgba(7, 9, 13, 0.92); border-bottom-c
   gap: 15px;
 }
 .arch-panel, .card { background: var(--panel); border: 1px solid var(--border); padding: 16px; }
+.arch-panel code { overflow-wrap: anywhere; word-break: break-word; }
 
 .arch-kicker, .tag {
   display: inline-block;
